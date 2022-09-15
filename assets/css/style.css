@@ -1,0 +1,233 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+@font-face {
+  font-family: "Halvar Breitschrift DEMO";
+  src: url(/assets/fonts/HalvarBreitschriftDEMO-Bold.otf);
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  color: #ffffff;
+  font-size: calc(16px + (18 - 16) * ((100vw - 1440px) / (1920 - 1440)));
+  font-weight: 400;
+  line-height: 1.2;
+  overflow-x: hidden;
+}
+
+h1 {
+  font-family: Halvar Breitschrift DEMO;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: calc(63px + (65 - 63) * ((100vw - 1440px) / (1920 - 1440)));
+  line-height: 0.92;
+}
+
+.hero {
+  width: 100vw;
+  height: 100vh;
+}
+
+.fullpage-wrapper {
+}
+
+.circles-wrapper {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.circles-wrapper svg {
+  position: absolute;
+}
+
+.gift {
+  position: absolute;
+  top: 180px;
+  right: 500px;
+  width: 144px;
+  height: 144px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: #cb884a;
+  border: 2px solid #f0a560;
+  box-shadow: 0px 0px 47px 5px #cb884a, inset 0px 0px 5px rgba(0, 0, 0, 0.25);
+  border-radius: 100%;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  -ms-border-radius: 100%;
+  -o-border-radius: 100%;
+}
+
+.gift > span {
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.first-page {
+  background: url(/assets/image/first-page.jpg) center no-repeat;
+}
+
+.second-page {
+  background: url(/assets/image/second-page.jpg) center no-repeat;
+}
+
+.third-page {
+  background: url(/assets/image/third-page.jpg) center no-repeat;
+}
+
+.section {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.section_title {
+  position: absolute;
+  top: 219px;
+  left: 240px;
+}
+
+.section_title h1 {
+  max-width: 120px;
+}
+
+.section_title p {
+  margin-top: 30px;
+  max-width: 330px;
+  text-indent: 1.9rem;
+}
+
+.section_img {
+}
+
+.section_img img {
+  width: 100%;
+}
+
+.section_mini-img {
+  position: absolute;
+  top: 576px;
+  right: 395px;
+}
+
+.section_mini-img img {
+  width: 100%;
+  border-radius: 12px;
+  -webkit-border-radius: 12px;
+  -moz-border-radius: 12px;
+  -ms-border-radius: 12px;
+  -o-border-radius: 12px;
+}
+
+.section-description {
+  position: absolute;
+  bottom: 60px;
+  display: grid;
+  align-items: start;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 108px;
+}
+
+.description-item {
+  max-width: 220px;
+  line-height: 1;
+}
+
+.description-item > span {
+  font-size: calc(12px + (14 - 12) * ((100vw - 1440px) / (1920 - 1440)));
+}
+
+.description-item > span::before {
+  display: block;
+  width: 100%;
+  height: 1px;
+  content: "";
+  background-color: #ffffff;
+  margin-bottom: 7px;
+}
+
+/* Футер */
+footer {
+  position: fixed;
+  bottom: 19px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 calc(30px + (35 - 30) * ((100vw - 1440px) / (1920 - 1440)));
+  width: 100vw;
+}
+
+footer .left-block {
+  max-width: 106px;
+  line-height: 1;
+}
+
+footer .left-block span {
+  font-size: 10px;
+  font-weight: 500;
+}
+
+/* Анимация шума*/
+/* .first-page::before {
+  top: -10rem;
+  left: -10rem;
+  width: calc(100% + 20rem);
+  height: calc(100% + 20rem);
+  content: "";
+  position: absolute;
+  animation: noise 1s steps(2) infinite;
+  -webkit-animation: noise 1s steps(2) infinite;
+  animation-duration: 1s;
+  animation-timing-function: steps(2);
+  animation-delay: 0s;
+  animation-iteration-count: infinite;
+  animation-direction: normal;
+  animation-fill-mode: none;
+  animation-play-state: running;
+  animation-name: noise;
+  background-image: url(/assets/image/noise.png);
+  opacity: 0.5;
+}
+
+@keyframes noise {
+  0% {
+    transform: translate3d(0, 9rem, 0);
+  }
+  10% {
+    transform: translate3d(-1rem, -4rem, 0);
+  }
+  20% {
+    transform: translate3d(-8rem, 2rem, 0);
+  }
+  30% {
+    transform: translate3d(9rem, -9rem, 0);
+  }
+  40% {
+    transform: translate3d(-2rem, 7rem, 0);
+  }
+  50% {
+    transform: translate3d(-9rem, -4rem, 0);
+  }
+  60% {
+    transform: translate3d(2rem, 6rem, 0);
+  }
+  70% {
+    transform: translate3d(7rem, -8rem, 0);
+  }
+  80% {
+    transform: translate3d(-9rem, 1rem, 0);
+  }
+  90% {
+    transform: translate3d(6rem, -5rem, 0);
+  }
+  to {
+    transform: translate3d(-7rem, 0, 0);
+  }
+} */
