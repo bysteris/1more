@@ -22,6 +22,7 @@ h1 {
   line-height: 0.92;
 }
 
+/* Главный экран */
 .circles-wrapper {
   position: absolute;
   display: flex;
@@ -31,7 +32,6 @@ h1 {
   height: 100%;
   padding: 0 calc(223px + (297 - 223) * ((100vw - 1440px) / (1920 - 1440)));
   overflow: hidden;
-  z-index: 1;
 }
 
 .circles-wrapper svg {
@@ -56,7 +56,7 @@ h1 {
   -moz-border-radius: 100%;
   -ms-border-radius: 100%;
   -o-border-radius: 100%;
-  z-index: 3;
+  z-index: 10;
 }
 
 .gift > span {
@@ -87,14 +87,11 @@ h1 {
   align-items: center;
 }
 
-.section > * {
-  z-index: 2;
-}
-
 .section_title {
   position: absolute;
   top: calc(205px + (219 - 205) * ((100vw - 1440px) / (1920 - 1440)));
   left: calc(180px + (240 - 180) * ((100vw - 1440px) / (1920 - 1440)));
+  z-index: 9;
 }
 
 .section_title h1 {
@@ -112,6 +109,7 @@ h1 {
   display: grid;
   justify-content: center;
   padding: 0 calc(420px + (560 - 420) * ((100vw - 1440px) / (1920 - 1440)));
+  z-index: 9;
 }
 
 .section_img img {
@@ -122,6 +120,7 @@ h1 {
   position: absolute;
   top: calc(490px + (576 - 490) * ((100vw - 1440px) / (1920 - 1440)));
   right: calc(297px + (395 - 297) * ((100vw - 1440px) / (1920 - 1440)));
+  z-index: 9;
 }
 
 .section_mini-img img {
@@ -140,6 +139,7 @@ h1 {
   align-items: start;
   grid-template-columns: repeat(4, 1fr);
   column-gap: 108px;
+  z-index: 9;
 }
 
 .description-item {
@@ -160,6 +160,64 @@ h1 {
   margin-bottom: 7px;
 }
 
+/* Экран эволюции наушников */
+.evolution-page {
+}
+
+.evolution-wrapper-top {
+  padding-top: 224px;
+}
+
+.evolution-block {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding-bottom: 78px;
+}
+
+.evolution-block img {
+  opacity: 0.3;
+  width: 100%;
+}
+
+.evolution_left-block {
+}
+
+.evolution_right-block {
+}
+
+.evolution-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.evolution_left-block .evolution-description {
+  margin-right: 60px;
+  margin-left: -60px;
+  text-align: right;
+}
+
+.evolution_right-block .evolution-description {
+  margin-left: 60px;
+  margin-right: -60px;
+  text-align: left;
+}
+
+.evolution-description {
+  display: flex;
+  flex-direction: column;
+}
+
+.evolution-description h2 {
+  font-family: Halvar Breitschrift DEMO;
+  font-size: 64px;
+  font-weight: 500;
+  text-transform: uppercase;
+  line-height: 1;
+  margin: 0;
+  margin-bottom: 18px;
+}
+
 /* Футер */
 footer {
   position: fixed;
@@ -169,6 +227,7 @@ footer {
   justify-content: space-between;
   padding: 0 calc(27px + (35 - 27) * ((100vw - 1440px) / (1920 - 1440)));
   width: 100vw;
+  z-index: 10;
 }
 
 footer .left-block {
@@ -199,60 +258,59 @@ footer .right-block span {
   -o-border-radius: 100%;
 }
 
-/* Анимация шума*/
-/* .first-page::before {
-  top: -10rem;
-  left: -10rem;
-  width: calc(100% + 20rem);
-  height: calc(100% + 20rem);
-  content: "";
-  position: absolute;
-  animation: noise 1s steps(2) infinite;
-  -webkit-animation: noise 1s steps(2) infinite;
-  animation-duration: 1s;
-  animation-timing-function: steps(2);
-  animation-delay: 0s;
-  animation-iteration-count: infinite;
-  animation-direction: normal;
-  animation-fill-mode: none;
-  animation-play-state: running;
-  animation-name: noise;
-  background-image: url(/assets/image/noise.png);
-  opacity: 0.5;
-}
-
-@keyframes noise {
+@keyframes bganimationFirst {
   0% {
-    transform: translate3d(0, 9rem, 0);
-  }
-  10% {
-    transform: translate3d(-1rem, -4rem, 0);
-  }
-  20% {
-    transform: translate3d(-8rem, 2rem, 0);
-  }
-  30% {
-    transform: translate3d(9rem, -9rem, 0);
-  }
-  40% {
-    transform: translate3d(-2rem, 7rem, 0);
+    background-position: 100% 0%, 0% 0%, -50% -50%;
   }
   50% {
-    transform: translate3d(-9rem, -4rem, 0);
+    background-position: 100% 50%, 0% 100%, 60% 10%;
   }
-  60% {
-    transform: translate3d(2rem, 6rem, 0);
+  100% {
+    background-position: 100% 100%, 0% 0%, 80% 200%;
   }
-  70% {
-    transform: translate3d(7rem, -8rem, 0);
+}
+
+.first-background {
+  background: radial-gradient(
+      50% 50% at 50% 50%,
+      #162287 0%,
+      rgba(24, 26, 32, 0) 100%
+    ),
+    radial-gradient(50% 50% at 50% 50%, #162287 50%, rgba(24, 26, 32, 0) 100%),
+    radial-gradient(50% 50% at 50% 50%, #551687 0%, rgba(24, 26, 32, 0) 100%),
+    #000000;
+  background-repeat: no-repeat, no-repeat, no-repeat;
+  background-size: 3000px 3000px, 3000px 3000px, 500px 500px;
+  background-attachment: fixed;
+  animation: bganimationFirst 15s infinite;
+  -webkit-animation: bganimationFirst 15s infinite;
+}
+
+
+@keyframes bganimationSecond {
+  0% {
+    background-position: 100% 0%, 0% 0%, -50% -50%;
   }
-  80% {
-    transform: translate3d(-9rem, 1rem, 0);
+  50% {
+    background-position: 100% 50%, 0% 100%, 60% 10%;
   }
-  90% {
-    transform: translate3d(6rem, -5rem, 0);
+  100% {
+    background-position: 100% 100%, 0% 0%, 80% 200%;
   }
-  to {
-    transform: translate3d(-7rem, 0, 0);
-  }
-} */
+}
+
+.second-background {
+  background: radial-gradient(
+      50% 50% at 50% 50%,
+      #162287 0%,
+      rgba(24, 26, 32, 0) 100%
+    ),
+    radial-gradient(50% 50% at 50% 50%, #162287 50%, rgba(24, 26, 32, 0) 100%),
+    radial-gradient(50% 50% at 50% 50%, #551687 0%, rgba(24, 26, 32, 0) 100%),
+    #000000;
+  background-repeat: no-repeat, no-repeat, no-repeat;
+  background-size: 3000px 3000px, 3000px 3000px, 500px 500px;
+  background-attachment: fixed;
+  animation: bganimationFirst 15s infinite;
+  -webkit-animation: bganimationFirst 15s infinite;
+}
