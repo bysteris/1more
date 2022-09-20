@@ -17,5 +17,10 @@ document.addEventListener("DOMContentLoaded", function () {
     },
   });
 
+  const bcg = document.querySelector(".evolution-line .move");
 
+  window.addEventListener("scroll", () => {
+    let calc = (((window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100) + 100);
+    bcg.style.height = `${calc}vh`;
+  });
 });

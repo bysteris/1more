@@ -164,25 +164,37 @@ h1 {
 .evolution-page {
 }
 
-.evolution-wrapper-top {
+.evolution_top-margin {
   padding-top: 224px;
 }
 
-.evolution-block {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  padding-bottom: 78px;
+.evolution-line {
+  position: absolute;
+  left: 50%;
+  margin-top: 3.5vh;
 }
 
-.evolution-block img {
-  opacity: 0.3;
+.evolution-line img {
+  opacity: 0.2;
+}
+
+.evolution-line span.move {
+  position: fixed;
+  width: 3px;
+  height: 400px;
+  max-height: 72vh;
+  top: 0;
+  left: calc(50% - 1px);
+  background-image: linear-gradient(to bottom, grey, white);
+}
+
+.evolution-wrapper {
+}
+
+.evolution-items {
+  display: flex;
   width: 100%;
-}
-
-.evolution_left-block {
-}
-
-.evolution_right-block {
+  padding-bottom: 78px;
 }
 
 .evolution-item {
@@ -191,21 +203,39 @@ h1 {
   align-items: center;
 }
 
-.evolution_left-block .evolution-description {
-  margin-right: 60px;
-  margin-left: -60px;
+.evolution-item img {
+  opacity: 0.3;
+}
+
+.evolution-item.left {
+  position: relative;
   text-align: right;
+  width: 50%;
 }
 
-.evolution_right-block .evolution-description {
-  margin-left: 60px;
-  margin-right: -60px;
+.evolution-item.right {
+  position: relative;
   text-align: left;
+  width: 50%;
 }
 
+.evolution-item.left img,
+.evolution-item.right img,
 .evolution-description {
-  display: flex;
-  flex-direction: column;
+  width: 100%;
+}
+
+.evolution-item.left .evolution-description {
+  margin-left: -70px;
+  margin-right: 70px;
+}
+
+.evolution-item.right img {
+}
+
+.evolution-item.right .evolution-description {
+  margin-right: -70px;
+  margin-left: 70px;
 }
 
 .evolution-description h2 {
@@ -218,14 +248,33 @@ h1 {
   margin-bottom: 18px;
 }
 
+.evolution-dot {
+  position: absolute;
+  height: 24px;
+  width: 24px;
+  background-color: #2a213e;
+  border-radius: 50%;
+  border: 7px solid #ffffff;
+  box-shadow: 0px 0px 20px 2px #ffffffa6;
+}
+
+.evolution-item.left .evolution-dot {
+  right: -12px;
+}
+
+.evolution-item.right .evolution-dot {
+  left: -12px;
+}
+
 /* Футер */
 footer {
   position: fixed;
-  bottom: calc(13px + (19 - 13) * ((100vw - 1440px) / (1920 - 1440)));
+  bottom: 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 calc(27px + (35 - 27) * ((100vw - 1440px) / (1920 - 1440)));
+  padding-bottom: calc(13px + (19 - 13) * ((100vw - 1440px) / (1920 - 1440)));
   width: 100vw;
   z-index: 10;
 }
@@ -280,36 +329,7 @@ footer .right-block span {
     radial-gradient(50% 50% at 50% 50%, #551687 0%, rgba(24, 26, 32, 0) 100%),
     #000000;
   background-repeat: no-repeat, no-repeat, no-repeat;
-  background-size: 3000px 3000px, 3000px 3000px, 500px 500px;
-  background-attachment: fixed;
-  animation: bganimationFirst 15s infinite;
-  -webkit-animation: bganimationFirst 15s infinite;
-}
-
-
-@keyframes bganimationSecond {
-  0% {
-    background-position: 100% 0%, 0% 0%, -50% -50%;
-  }
-  50% {
-    background-position: 100% 50%, 0% 100%, 60% 10%;
-  }
-  100% {
-    background-position: 100% 100%, 0% 0%, 80% 200%;
-  }
-}
-
-.second-background {
-  background: radial-gradient(
-      50% 50% at 50% 50%,
-      #162287 0%,
-      rgba(24, 26, 32, 0) 100%
-    ),
-    radial-gradient(50% 50% at 50% 50%, #162287 50%, rgba(24, 26, 32, 0) 100%),
-    radial-gradient(50% 50% at 50% 50%, #551687 0%, rgba(24, 26, 32, 0) 100%),
-    #000000;
-  background-repeat: no-repeat, no-repeat, no-repeat;
-  background-size: 3000px 3000px, 3000px 3000px, 500px 500px;
+  background-size: 2000px 2000px, 2000px 2000px, 500px 500px;
   background-attachment: fixed;
   animation: bganimationFirst 15s infinite;
   -webkit-animation: bganimationFirst 15s infinite;
