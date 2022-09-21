@@ -59,7 +59,7 @@ h1 {
   z-index: 10;
 }
 
-.gift > span {
+.gift>span {
   font-size: calc(10.5px + (14 - 10.5) * ((100vw - 1440px) / (1920 - 1440)));
   font-weight: 700;
   text-transform: uppercase;
@@ -147,11 +147,11 @@ h1 {
   line-height: 1;
 }
 
-.description-item > span {
+.description-item>span {
   font-size: calc(10px + (14 - 10) * ((100vw - 1440px) / (1920 - 1440)));
 }
 
-.description-item > span::before {
+.description-item>span::before {
   display: block;
   width: 100%;
   height: 1px;
@@ -161,8 +161,7 @@ h1 {
 }
 
 /* Экран эволюции наушников */
-.evolution-page {
-}
+.evolution-page {}
 
 .evolution_top-margin {
   padding-top: 50vh;
@@ -171,7 +170,7 @@ h1 {
 .evolution-line {
   position: absolute;
   left: 50%;
-  margin-top: 3.5vh;
+  margin-top: 30vh;
 }
 
 .evolution-line img {
@@ -185,11 +184,17 @@ h1 {
   max-height: 72vh;
   top: 0;
   left: calc(50% - 1px);
-  background-image: linear-gradient(to bottom, grey, white);
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.4), white);
+  opacity: 0;
+  transition: opacity 1s;
 }
 
-.evolution-wrapper {
+.evolution-line span.move.active {
+  opacity: 1;
+  transition: opacity 4s;
 }
+
+.evolution-wrapper {}
 
 .evolution-items {
   display: flex;
@@ -219,6 +224,10 @@ h1 {
   width: 50%;
 }
 
+.evolution-description {
+  z-index: 1;
+}
+
 .evolution-item.left img,
 .evolution-item.right img,
 .evolution-description {
@@ -230,8 +239,7 @@ h1 {
   margin-right: 70px;
 }
 
-.evolution-item.right img {
-}
+.evolution-item.right img {}
 
 .evolution-item.right .evolution-description {
   margin-right: -70px;
@@ -309,28 +317,34 @@ footer .right-block span {
 
 @keyframes bganimationFirst {
   0% {
-    background-position: 100% 0%, 0% 0%, -50% -50%;
+    background-position: 100% 0%, 0% 0%, -50% 50%;
   }
+
   50% {
     background-position: 100% 50%, 0% 100%, 60% 10%;
   }
+
   100% {
-    background-position: 100% 100%, 0% 0%, 80% 200%;
+    background-position: 100% 100%, 0% 0%, 80% 80%;
   }
 }
 
 .first-background {
-  background: radial-gradient(
-      50% 50% at 50% 50%,
-      #162287 0%,
-      rgba(24, 26, 32, 0) 100%
-    ),
+  background:
+    radial-gradient(50% 50% at 50% 50%, #162287 0%, rgba(24, 26, 32, 0) 100%),
     radial-gradient(50% 50% at 50% 50%, #162287 50%, rgba(24, 26, 32, 0) 100%),
     radial-gradient(50% 50% at 50% 50%, #551687 0%, rgba(24, 26, 32, 0) 100%),
     #000000;
   background-repeat: no-repeat, no-repeat, no-repeat;
-  background-size: 2000px 2000px, 2000px 2000px, 500px 500px;
-  background-attachment: fixed;
+  background-size: 3000px 3000px, 3000px 3000px, 2000px 2000px;
+  /* background-attachment: fixed; */
   animation: bganimationFirst 15s infinite;
   -webkit-animation: bganimationFirst 15s infinite;
+}
+
+.background-transition {
+  background: radial-gradient(90% 90% at 50% 0%,
+      #162287 0%,
+      rgba(24, 26, 32, 0) 100%),
+    #000;
 }
