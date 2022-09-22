@@ -19,6 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
   const bcg = document.querySelector(".evolution-line .move");
+  const evolutionPage = document.querySelector(".evolution-page");
 
   window.addEventListener("scroll", () => {
     let calc = (((window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100) + 100);
