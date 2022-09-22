@@ -184,7 +184,7 @@ h1 {
   max-height: 72vh;
   top: 0;
   left: calc(50% - 1px);
-  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.4), white);
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 1), white);
   opacity: 0;
   transition: opacity 1s;
 }

@@ -1046,7 +1046,7 @@ body[data-aos-easing=ease-in-out-quart] [data-aos] {
 }
 
 [data-aos^=zoom][data-aos^=zoom].aos-animate {
-    opacity: 0.3;
+    opacity: 0.8;
     transform: translateZ(0) scale(1)
 }
 
