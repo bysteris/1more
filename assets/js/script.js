@@ -36,4 +36,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Инит AOSanimation
   AOS.init();
+
+  gsap.to(".radius-section", {
+    scrollTrigger: {
+        trigger: ".radius-section",
+        start: "10% 100%",
+        end: "100% 95%",
+        scrub: 1
+    },
+    borderTopLeftRadius: 0,
+    borderTopRightRadius: 0,
+    // scale: 1.2,
+    duration: 2
+});
 });

@@ -351,4 +351,7 @@ footer .right-block span {
 .radius-section {
   border-top-left-radius: 100%;
   border-top-right-radius: 100%;
+  transform: scale(1);
+  width: 100%;
 }
+
