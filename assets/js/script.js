@@ -19,34 +19,36 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
   const bcg = document.querySelector(".evolution-line .move");
-  const evolutionPage = document.querySelector(".evolution-page");
 
   window.addEventListener("scroll", () => {
-    let calc = (((window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100) + 100);
+    let calc =
+      (window.scrollY / (document.body.scrollHeight - window.innerHeight)) *
+        100 +
+      100;
     bcg.style.height = `${calc}vh`;
 
-    if (window.scrollY > (window.screen.availHeight) / 2) {
-
-      bcg.classList.add('active');
+    if (window.scrollY > window.screen.availHeight / 2) {
+      bcg.classList.add("active");
     } else {
-      bcg.classList.remove('active');
+      bcg.classList.remove("active");
     }
   });
-
 
   // Инит AOSanimation
   AOS.init();
 
-  gsap.to(".radius-section", {
+  gsap.to(".banner-radius", {
     scrollTrigger: {
-        trigger: ".radius-section",
-        start: "10% 100%",
-        end: "100% 95%",
-        scrub: 1
+      trigger: ".banner-radius",
+      start: "25% 100%",
+      end: "100% 95%",
+      scrub: 1,
     },
+    scale: 1,
     borderTopLeftRadius: 0,
     borderTopRightRadius: 0,
-    // scale: 1.2,
-    duration: 2
-});
+    duration: 2,
+  });
+  
+
 });
