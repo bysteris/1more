@@ -1,4 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
+
+
   //swiper на главном экране
   var mySwiper = new Swiper(".swiper-container", {
     direction: "vertical",
@@ -36,6 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // Инит AOSanimation
   AOS.init();
 
+  // GSAP scripts
   gsap.registerPlugin(ScrollTrigger);
 
   gsap.to(".banner-radius", {
@@ -44,6 +47,7 @@ document.addEventListener("DOMContentLoaded", function () {
       start: "25% 100%",
       end: "100% 100%",
       scrub: 1,
+      //markers: true,
     },
     scale: 1,
     borderTopLeftRadius: 0,
@@ -79,8 +83,7 @@ document.addEventListener("DOMContentLoaded", function () {
     duration: 2,
   });
 
-  
-
+  // Horizontal Scroll
   let sections = gsap.utils.toArray(".banner_horizontal-container .page");
 
   gsap.to(sections, {
@@ -91,10 +94,12 @@ document.addEventListener("DOMContentLoaded", function () {
       pin: true,
       start: "top",
       //markers: true,
-      scrub: 1,
-      end: () => "+=" + document.querySelector(".banner_horizontal-container").offsetWidth / 4,
+      scrub: 2,
+      end: () =>
+        "+=" + document.querySelector(".banner_horizontal-container").offsetWidth / 2,
     },
   });
+
 
 
 });
