@@ -59,7 +59,7 @@ h1 {
   z-index: 10;
 }
 
-.gift > span {
+.gift>span {
   font-size: calc(10.5px + (14 - 10.5) * ((100vw - 1440px) / (1920 - 1440)));
   font-weight: 700;
   text-transform: uppercase;
@@ -147,11 +147,11 @@ h1 {
   line-height: 1;
 }
 
-.description-item > span {
+.description-item>span {
   font-size: calc(10px + (14 - 10) * ((100vw - 1440px) / (1920 - 1440)));
 }
 
-.description-item > span::before {
+.description-item>span::before {
   display: block;
   width: 100%;
   height: 1px;
@@ -161,8 +161,7 @@ h1 {
 }
 
 /* Экран эволюции наушников */
-.evolution-page {
-}
+.evolution-page {}
 
 .evolution-line {
   position: absolute;
@@ -238,8 +237,7 @@ h1 {
   margin-right: 70px;
 }
 
-.evolution-item.right img {
-}
+.evolution-item.right img {}
 
 .evolution-item.right .evolution-description {
   margin-right: -70px;
@@ -275,11 +273,9 @@ h1 {
 }
 
 /* Экран с баннером */
-.page-banner {
-}
+.page-banner {}
 
-.banner-wrapper {
-}
+.banner-wrapper {}
 
 .banner_horizontal-container {
   width: 200%;
@@ -438,6 +434,9 @@ h1 {
 
 /* Экран с конкурсом */
 .page-contest {
+  width: 100vw;
+  height: 100vh;
+  margin-top: -1px;
   background: url(/assets/image/noise-background.png) #000000;
 }
 
@@ -445,6 +444,7 @@ h1 {
   position: relative;
   padding: 0 calc(50px + (60 - 50) * ((100vw - 1440px) / (1920 - 1440)));
   width: 100%;
+  background: url(/assets/image/contest_wave.png) center no-repeat;
 }
 
 .contest-headphones-container {
@@ -458,16 +458,127 @@ h1 {
 
 .contest-container {
   position: absolute;
-  top: 50vh;
+  top: 0;
   left: 0;
   display: flex;
+  align-items: center;
   flex-direction: column;
   text-align: center;
-  padding: 0 456px;
+  padding: 0 calc(388px + (456 - 388) * ((100vw - 1440px) / (1920 - 1440)));
 }
 
-.contest-description {
+.contest-description {}
+
+.contest-description span {
+  display: block;
+  margin-top: calc(173px + (231 - 173) * ((100vw - 1440px) / (1920 - 1440)));
+  margin-bottom: calc(56px + (76 - 56) * ((100vw - 1440px) / (1920 - 1440)));
+  font-size: calc(18px + (24 - 18) * ((100vw - 1440px) / (1920 - 1440)));
+  font-weight: 500;
 }
+
+.contest-description h1 {
+  display: block;
+  margin-bottom: calc(35px + (49 - 35) * ((100vw - 1440px) / (1920 - 1440)));
+  font-family: Halvar Breitschrift DEMO;
+  font-size: calc(62px + (82 - 62) * ((100vw - 1440px) / (1920 - 1440)));
+  font-weight: 700;
+  line-height: 0.92;
+}
+
+.contest-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: calc(11px + (14 - 11) * ((100vw - 1440px) / (1920 - 1440)));
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: calc(17px + (23 - 17) * ((100vw - 1440px) / (1920 - 1440))) calc(23px + (36 - 23) * ((100vw - 1440px) / (1920 - 1440)));
+  background: #CB884A;
+  border: 2px solid #F0A560;
+  box-shadow: 0px 0px 47px 5px #CB884A, inset 0px 0px 5px rgba(0, 0, 0, 0.25);
+  border-radius: 5000px;
+}
+
+
+/* Экран с участниками */
+.page-participants {
+  background: url(/assets/image/noise-background.png) #000000;
+}
+
+.participants-wrapper {
+  padding: 0 calc(40px + (50 - 40) * ((100vw - 1440px) / (1920 - 1440)));
+  padding-top: calc(142px + (190 - 142) * ((100vw - 1440px) / (1920 - 1440)));
+  padding-bottom: calc(82px + (110 - 82) * ((100vw - 1440px) / (1920 - 1440)));
+}
+
+.participants-items {
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 28px;
+}
+
+.participants-item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.participants-item_img {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.participants-item_img img {
+  width: 100%;
+  border-radius: 37px;
+}
+
+.participants-item_img::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  content: "";
+  border-radius: 37px;
+  background: transparent;
+  background: linear-gradient(180deg, rgba(26, 27, 29, 0.153846) 0%, #1A1B1D 100%);
+}
+
+.participants-item_description {
+  position: absolute;
+  bottom: 0;
+  padding-bottom: 35px;
+  padding-left: 25px;
+}
+
+.participants-item_description h3 {
+  margin: 0;
+  font-family: Halvar Breitschrift DEMO;
+  font-size: calc(27px + (36 - 27) * ((100vw - 1440px) / (1920 - 1440)));
+  font-weight: 700;
+  line-height: 1;
+}
+
+.participants-more {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: calc(64px + (84 - 64) * ((100vw - 1440px) / (1920 - 1440)));
+  width: 100%;
+}
+
+.participants-more::after {
+  content: url(/assets/image/arrow_more.png);
+  margin-left: 27px;
+}
+
+
 
 /* Футер */
 footer {
@@ -483,7 +594,6 @@ footer {
 }
 
 footer .left-block {
-  max-width: 106px;
   line-height: 1;
 }
 
@@ -525,11 +635,9 @@ footer .right-block span {
 }
 
 .first-background {
-  background: radial-gradient(
-      90% 90% at 50% 0%,
+  background: radial-gradient(90% 90% at 50% 0%,
       #162287 0%,
-      rgba(24, 26, 32, 0) 100%
-    ),
+      rgba(24, 26, 32, 0) 100%),
     radial-gradient(50% 50% at 50% 50%, #162287 0%, rgba(24, 26, 32, 0) 100%),
     radial-gradient(50% 50% at 50% 50%, #162287 50%, rgba(24, 26, 32, 0) 100%),
     radial-gradient(50% 50% at 50% 50%, #551687 0%, rgba(24, 26, 32, 0) 100%),
@@ -542,10 +650,8 @@ footer .right-block span {
 }
 
 .background-transition {
-  background: radial-gradient(
-      90% 90% at 50% 0%,
+  background: radial-gradient(90% 90% at 50% 0%,
       #162287 0%,
-      rgba(24, 26, 32, 0) 100%
-    ),
+      rgba(24, 26, 32, 0) 100%),
     #000;
 }

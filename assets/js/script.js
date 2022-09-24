@@ -23,9 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   window.addEventListener("scroll", () => {
     let calc =
-      (window.scrollY / (document.body.scrollHeight - window.innerHeight)) *
-        100 +
-      100;
+      (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100 + 100;
     bcg.style.height = `${calc}vh`;
 
     if (window.scrollY > window.screen.availHeight / 2) {
@@ -95,8 +93,7 @@ document.addEventListener("DOMContentLoaded", function () {
       start: "top",
       //markers: true,
       scrub: 2,
-      end: () =>
-        "+=" + document.querySelector(".banner_horizontal-container").offsetWidth / 2,
+      end: () => "+=" + document.querySelector(".banner_horizontal-container").offsetWidth / 2,
     },
   });
 
