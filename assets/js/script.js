@@ -81,7 +81,7 @@ document.addEventListener("DOMContentLoaded", function () {
     duration: 2,
   });
 
-  // Horizontal Scroll
+  // Horizontal Scroll Banner
   let sections = gsap.utils.toArray(".banner_horizontal-container .page");
 
   gsap.to(sections, {
@@ -97,6 +97,33 @@ document.addEventListener("DOMContentLoaded", function () {
     },
   });
 
+  // Horizontal Scroll Second Banner
+  let sections2 = gsap.utils.toArray(".second-banner_horizontal-container .page");
 
+  gsap.to(sections2, {
+    xPercent: -100 * (sections2.length - 1),
+    ease: "SlowMo",
+    scrollTrigger: {
+      trigger: ".second-banner_wrapper",
+      pin: true,
+      start: "top",
+      //markers: true,
+      scrub: 1,
+      end: () => "+=" + document.querySelector(".second-banner_horizontal-container").offsetWidth / 2,
+    },
+  });
+
+  // Открытие и закрытие модального окна у теста
+  let testModal = document.querySelector('.test-modal'),
+    btnModal = document.querySelector('.test-btn'),
+    btnModalClsoe = document.querySelector('.test-modal_close');
+
+  btnModal.addEventListener('click', function () {
+    testModal.classList.add("active");
+  });
+
+  btnModalClsoe.addEventListener('click', function () {
+    testModal.classList.remove("active");
+  })
 
 });
