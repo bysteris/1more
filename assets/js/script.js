@@ -1,6 +1,4 @@
 document.addEventListener("DOMContentLoaded", function () {
-
-
   //swiper на главном экране
   var mySwiper = new Swiper(".swiper-container", {
     direction: "vertical",
@@ -23,7 +21,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
   window.addEventListener("scroll", () => {
     let calc =
-      (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100 + 100;
+      (window.scrollY / (document.body.scrollHeight - window.innerHeight)) *
+        100 +
+      100;
     bcg.style.height = `${calc}vh`;
 
     if (window.scrollY > window.screen.availHeight / 2) {
@@ -93,12 +93,16 @@ document.addEventListener("DOMContentLoaded", function () {
       start: "top",
       //markers: true,
       scrub: 2,
-      end: () => "+=" + document.querySelector(".banner_horizontal-container").offsetWidth / 2,
+      end: () =>
+        "+=" +
+        document.querySelector(".banner_horizontal-container").offsetWidth / 2,
     },
   });
 
   // Horizontal Scroll Second Banner
-  let sections2 = gsap.utils.toArray(".second-banner_horizontal-container .page");
+  let sections2 = gsap.utils.toArray(
+    ".second-banner_horizontal-container .page"
+  );
 
   gsap.to(sections2, {
     xPercent: -100 * (sections2.length - 1),
@@ -109,21 +113,33 @@ document.addEventListener("DOMContentLoaded", function () {
       start: "top",
       //markers: true,
       scrub: 1,
-      end: () => "+=" + document.querySelector(".second-banner_horizontal-container").offsetWidth / 2,
+      end: () =>
+        "+=" +
+        document.querySelector(".second-banner_horizontal-container")
+          .offsetWidth /
+          2,
     },
   });
 
   // Открытие и закрытие модального окна у теста
-  let testModal = document.querySelector('.test-modal'),
-    btnModal = document.querySelector('.test-btn'),
-    btnModalClsoe = document.querySelector('.test-modal_close');
+  let testModal = document.querySelector(".test-modal"),
+    btnModal = document.querySelector(".test-btn"),
+    btnModalClsoe = document.querySelector(".test-modal_close");
 
-  btnModal.addEventListener('click', function () {
+  btnModal.addEventListener("click", function () {
     testModal.classList.add("active");
   });
 
-  btnModalClsoe.addEventListener('click', function () {
+  btnModalClsoe.addEventListener("click", function () {
     testModal.classList.remove("active");
-  })
+  });
+
+  // Анимация звуковой волны в хедере
+  var loadTimeOut = function () {
+    var soundWave = $(".sound-wave .bar").removeClass("bar");
+    setTimeout(function () {
+    }, 3000);
+  };
+  $(".sound-wave .bar").addClass("bar2");
 
 });
