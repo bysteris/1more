@@ -17,24 +17,81 @@ document.addEventListener("DOMContentLoaded", function () {
     },
   });
 
-  const bcg = document.querySelector(".evolution-line .move");
+  // TimeLine Animation
+  (function ($) {
+    $(function () {
+      $(window).on("scroll", function () {
+        fnOnScroll();
+      });
 
-  window.addEventListener("scroll", () => {
-    let calc =
-      (window.scrollY / (document.body.scrollHeight - window.innerHeight)) *
-        100 +
-      100;
-    bcg.style.height = `${calc}vh`;
+      $(window).on("resize", function () {
+        fnOnResize();
+      });
 
-    if (window.scrollY > window.screen.availHeight / 2) {
-      bcg.classList.add("active");
-    } else {
-      bcg.classList.remove("active");
-    }
-  });
+      var agTimeline = $(".js-timeline"),
+        agTimelineLine = $(".js-timeline_line"),
+        agTimelineLineProgress = $(".js-timeline_line-progress"),
+        agTimelinePoint = $(".js-timeline-card_point-box"),
+        agTimelineItem = $(".js-timeline_item"),
+        agOuterHeight = $(window).outerHeight(),
+        agHeight = $(window).height(),
+        f = -1,
+        agFlag = false;
 
-  // Инит AOSanimation
-  AOS.init();
+      function fnOnScroll() {
+        agPosY = $(window).scrollTop();
+
+        fnUpdateFrame();
+      }
+
+      function fnOnResize() {
+        agPosY = $(window).scrollTop();
+        agHeight = $(window).height();
+
+        fnUpdateFrame();
+      }
+
+      function fnUpdateWindow() {
+        agFlag = false;
+
+        agTimelineLine.css({
+          top:
+            agTimelineItem.first().find(agTimelinePoint).offset().top -
+            agTimelineItem.first().offset().top,
+          bottom:
+            agTimeline.offset().top +
+            agTimeline.outerHeight() -
+            agTimelineItem.last().find(agTimelinePoint).offset().top,
+        });
+
+        f !== agPosY && ((f = agPosY), agHeight, fnUpdateProgress());
+      }
+
+      function fnUpdateProgress() {
+        var agTop = agTimelineItem.last().find(agTimelinePoint).offset().top;
+
+        i = agTop + agPosY - $(window).scrollTop();
+        a =
+          agTimelineLineProgress.offset().top + agPosY - $(window).scrollTop();
+        n = agPosY - a + agOuterHeight / 2;
+        i <= agPosY + agOuterHeight / 2 && (n = i - a);
+        agTimelineLineProgress.css({ height: n + "px" });
+
+        agTimelineItem.each(function () {
+          var agTop = $(this).find(agTimelinePoint).offset().top;
+
+          agTop + agPosY - $(window).scrollTop() < agPosY + 0.5 * agOuterHeight
+            ? $(this).addClass("js-ag-active")
+            : $(this).removeClass("js-ag-active");
+        });
+      }
+
+      function fnUpdateFrame() {
+        agFlag || requestAnimationFrame(fnUpdateWindow);
+        agFlag = true;
+      }
+    });
+  })(jQuery);
 
   // GSAP scripts
   gsap.registerPlugin(ScrollTrigger);
@@ -137,9 +194,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // Анимация звуковой волны в хедере
   var loadTimeOut = function () {
     var soundWave = $(".sound-wave .bar").removeClass("bar");
-    setTimeout(function () {
-    }, 3000);
+    setTimeout(function () {}, 3000);
   };
   $(".sound-wave .bar").addClass("bar2");
-
 });
