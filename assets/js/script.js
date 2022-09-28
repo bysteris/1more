@@ -96,12 +96,12 @@ document.addEventListener("DOMContentLoaded", function () {
   // GSAP scripts
   gsap.registerPlugin(ScrollTrigger);
 
-  gsap.to(".banner-radius", {
+  let radius = gsap.to(".banner-radius", {
     scrollTrigger: {
       trigger: ".banner-radius",
-      start: "25% 100%",
+      start: "50% 100%",
       end: "100% 100%",
-      scrub: 1,
+      scrub: 0.5,
       //markers: true,
     },
     scale: 1,
@@ -127,7 +127,7 @@ document.addEventListener("DOMContentLoaded", function () {
     scrollTrigger: {
       trigger: ".banner-description_wrapper",
       start: "100% 100%",
-      end: "200% 100%",
+      end: "bottom bottom",
       scrub: 1,
       //markers: true
     },
@@ -141,41 +141,77 @@ document.addEventListener("DOMContentLoaded", function () {
   // Horizontal Scroll Banner
   let sections = gsap.utils.toArray(".banner_horizontal-container .page");
 
-  gsap.to(sections, {
+  let horizontal = gsap.to(sections, {
     xPercent: -100 * (sections.length - 1),
     ease: "SlowMo",
     scrollTrigger: {
       trigger: ".banner-wrapper",
       pin: true,
-      start: "top",
-      //markers: true,
-      scrub: 2,
-      end: () =>
-        "+=" +
-        document.querySelector(".banner_horizontal-container").offsetWidth / 2,
+      anticipatePin: 1,
+      scrub: 1,
+      snap: 1 / (sections.length - 1),
     },
   });
 
-  // Horizontal Scroll Second Banner
-  let sections2 = gsap.utils.toArray(
-    ".second-banner_horizontal-container .page"
-  );
-
-  gsap.to(sections2, {
-    xPercent: -100 * (sections2.length - 1),
-    ease: "SlowMo",
+  // Headphones left and right to center
+  gsap.timeline({
     scrollTrigger: {
-      trigger: ".second-banner_wrapper",
+      trigger: ".page-contest",
+      start: "top top",
+      end: "+=100%",
+      scrub: 0.5,
       pin: true,
-      start: "top",
+      anticipatePin: 1,
       //markers: true,
-      scrub: 1,
-      end: () =>
-        "+=" +
-        document.querySelector(".second-banner_horizontal-container")
-          .offsetWidth /
-          2,
     },
+    ease: "SlowMo",
+  })
+  .to(".contest-left-headphone", { xPercent: 0 }, 0)
+  .to(".contest-right-headphone", { xPercent: -50 }, 0)
+  .to(".");
+
+  // Horizontal Scroll Second Banner
+  const slides = gsap.utils.toArray(".slide");
+  const slidesTL = gsap.timeline();
+
+  function slideTL(slide, isFirst = false) {
+    const tl = gsap.timeline();
+    if (!isFirst) {
+      tl.from(slide, {
+        xPercent: 100,
+      });
+    }
+
+    tl.fromTo(
+      slide.querySelector(".bg-img"),
+      {
+        xPercent: isFirst ? 0 : 8,
+      },
+      {
+        xPercent: -8,
+      },
+      0.2
+    );
+
+    return tl;
+  }
+
+  slides.forEach((slide, i) => {
+    if (i === 0) {
+      slidesTL.add(slideTL(slide, true));
+    } else {
+      slidesTL.add(slideTL(slide), "-=0.1");
+    }
+  });
+
+  ScrollTrigger.create({
+    animation: slidesTL,
+    trigger: ".slide-container",
+    start: "top top",
+    end: `+=${slides.length * 100}%`,
+    scrub: 1,
+    pin: true,
+    anticipatePin: 1,
   });
 
   // Открытие и закрытие модального окна у теста
