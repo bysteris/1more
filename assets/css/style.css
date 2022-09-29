@@ -704,7 +704,20 @@ header {
   position: relative;
   padding: 0 calc(50px + (60 - 50) * ((100vw - 1440px) / (1920 - 1440)));
   width: 100%;
-  background: url(/assets/image/contest_wave.png) center no-repeat;
+  /* background: url(/assets/image/contest_wave.png) center no-repeat; */
+}
+
+.contest-wave {
+  position: absolute;
+  top: 10vh;
+  left: 0;
+  width: 100vw;
+  z-index: -1;
+  transform: translateY(-20%);
+  -webkit-transform: translateY(-20%);
+  -moz-transform: translateY(-20%);
+  -ms-transform: translateY(-20%);
+  -o-transform: translateY(-20%);
 }
 
 .contest-headphones-container {
@@ -713,19 +726,11 @@ header {
 }
 
 .contest-left-headphone {
-  transform: translateX(-50%);
-  -webkit-transform: translateX(-50%);
-  -moz-transform: translateX(-50%);
-  -ms-transform: translateX(-50%);
-  -o-transform: translateX(-50%);
+  margin-left: -30%;
 }
 
 .contest-right-headphone {
-  transform: translateX(50%);
-  -webkit-transform: translateX(50%);
-  -moz-transform: translateX(50%);
-  -ms-transform: translateX(50%);
-  -o-transform: translateX(50%);
+  margin-right: -30%;
 }
 
 .contest-container {
@@ -737,6 +742,11 @@ header {
   flex-direction: column;
   text-align: center;
   padding: 0 calc(388px + (456 - 388) * ((100vw - 1440px) / (1920 - 1440)));
+  transform: translateY(-20%);
+  -webkit-transform: translateY(-20%);
+  -moz-transform: translateY(-20%);
+  -ms-transform: translateY(-20%);
+  -o-transform: translateY(-20%);
 }
 
 .contest-description {
@@ -748,6 +758,12 @@ header {
   margin-bottom: calc(56px + (76 - 56) * ((100vw - 1440px) / (1920 - 1440)));
   font-size: calc(18px + (24 - 18) * ((100vw - 1440px) / (1920 - 1440)));
   font-weight: 500;
+  transform: translateY(-300%);
+  -webkit-transform: translateY(-300%);
+  -moz-transform: translateY(-300%);
+  -ms-transform: translateY(-300%);
+  -o-transform: translateY(-300%);
+  opacity: 0;
 }
 
 .contest-description h1 {
@@ -757,6 +773,12 @@ header {
   font-size: calc(62px + (82 - 62) * ((100vw - 1440px) / (1920 - 1440)));
   font-weight: 700;
   line-height: 0.92;
+  transform: translateY(-80%);
+  -webkit-transform: translateY(-80%);
+  -moz-transform: translateY(-80%);
+  -ms-transform: translateY(-80%);
+  -o-transform: translateY(-80%);
+  opacity: 0;
 }
 
 .contest-btn {
@@ -766,13 +788,18 @@ header {
   font-size: calc(11px + (14 - 11) * ((100vw - 1440px) / (1920 - 1440)));
   font-weight: 700;
   text-transform: uppercase;
-  padding: calc(17px + (23 - 17) * ((100vw - 1440px) / (1920 - 1440)))
-    calc(23px + (36 - 23) * ((100vw - 1440px) / (1920 - 1440)));
+  padding: calc(17px + (23 - 17) * ((100vw - 1440px) / (1920 - 1440)))    calc(23px + (36 - 23) * ((100vw - 1440px) / (1920 - 1440)));
   background: #cb884a;
   border: 2px solid #f0a560;
   box-shadow: 0px 0px 47px 5px #cb884a, inset 0px 0px 5px rgba(0, 0, 0, 0.25);
   border-radius: 5000px;
   cursor: pointer;
+  transform: translateY(600%);
+  -webkit-transform: translateY(600%);
+  -moz-transform: translateY(600%);
+  -ms-transform: translateY(600%);
+  -o-transform: translateY(600%);
+  opacity: 0;
 }
 
 .contest-btn:hover {

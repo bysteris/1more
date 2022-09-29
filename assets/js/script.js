@@ -148,7 +148,7 @@ document.addEventListener("DOMContentLoaded", function () {
       trigger: ".banner-wrapper",
       pin: true,
       anticipatePin: 1,
-      scrub: 1,
+      scrub: 1.5,
       snap: 1 / (sections.length - 1),
     },
   });
@@ -157,18 +157,19 @@ document.addEventListener("DOMContentLoaded", function () {
   gsap.timeline({
     scrollTrigger: {
       trigger: ".page-contest",
-      start: "top top",
-      end: "+=100%",
-      scrub: 0.5,
-      pin: true,
-      anticipatePin: 1,
+      start: "0% 100%",
+      end: "bottom bottom",
+      scrub: 1,
       //markers: true,
     },
     ease: "SlowMo",
   })
-  .to(".contest-left-headphone", { xPercent: 0 }, 0)
-  .to(".contest-right-headphone", { xPercent: -50 }, 0)
-  .to(".");
+  .to(".contest-wave", { yPercent: 20, ease: "SlowMo"}, 0)
+  .to(".contest-left-headphone", { marginLeft: 0 }, 0)
+  .to(".contest-right-headphone", { marginRight: 0 }, 0)
+  .to(".contest-description h1", { yPercent: 80, opacity: 1, ease: "SlowMo" }, 0)
+  .to(".contest-description span", { yPercent: 300, opacity: 1, ease: "SlowMo" }, 0)
+  .to(".contest-btn", { yPercent: -600, opacity: 1, ease: "SlowMo", transition: "translate 0.5s" }, 0)
 
   // Horizontal Scroll Second Banner
   const slides = gsap.utils.toArray(".slide");
