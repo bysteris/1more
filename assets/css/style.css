@@ -15,15 +15,15 @@ body {
   line-height: 1.2;
   overflow-x: hidden;
 }
-/* 
-body:after {
+
+/* body:after {
   animation: grain 1s steps(10) infinite;
   background-image: url(/assets/image/noise-background.jfif);
   content: "";
   height: 333%;
   left: -50%;
   opacity: 0.03;
-  z-index: 4;
+  z-index: -1;
   position: fixed;
   top: -110%;
   width: 333%;
@@ -402,7 +402,7 @@ header {
 }
 
 .ag-timeline-card_info {
-  width: 100%;
+  width: 40%;
   margin-left: -70px;
   margin-right: 70px;
   z-index: 1;
@@ -496,7 +496,7 @@ header {
 }
 
 .ag-timeline-card_img {
-  width: 100%;
+  width: 60%;
   opacity: 0.8;
 }
 
@@ -557,6 +557,10 @@ header {
 .banner-second img {
   width: 100%;
   height: 100%;
+}
+
+.ban-img {
+  object-fit: cover;
 }
 
 .banner-radius {
@@ -695,16 +699,16 @@ header {
 
 /* Экран с конкурсом */
 .page-contest {
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   margin-top: -1px;
+  /* background: url(/assets/image/contest_wave.png) center no-repeat; */
 }
 
 .contest-wrapper {
   position: relative;
   padding: 0 calc(50px + (60 - 50) * ((100vw - 1440px) / (1920 - 1440)));
   width: 100%;
-  /* background: url(/assets/image/contest_wave.png) center no-repeat; */
 }
 
 .contest-wave {
@@ -713,16 +717,18 @@ header {
   left: 0;
   width: 100vw;
   z-index: -1;
-  transform: translateY(-20%);
-  -webkit-transform: translateY(-20%);
-  -moz-transform: translateY(-20%);
-  -ms-transform: translateY(-20%);
-  -o-transform: translateY(-20%);
+  transform: translateY(-20%) scale(0.1);
+  -webkit-transform: translateY(-20%) scale(0.1);
+  -moz-transform: translateY(-20%) scale(0.1);
+  -ms-transform: translateY(-20%) scale(0.1);
+  -o-transform: translateY(-20%) scale(0.1);
 }
 
 .contest-headphones-container {
   display: flex;
   justify-content: space-between;
+  grid-template-columns: repeat(2, 1fr);
+  width: 100%;
 }
 
 .contest-left-headphone {
@@ -731,6 +737,11 @@ header {
 
 .contest-right-headphone {
   margin-right: -30%;
+}
+
+.contest-left-headphone img, 
+.contest-right-headphone img {
+  width: 100%;
 }
 
 .contest-container {
@@ -788,7 +799,8 @@ header {
   font-size: calc(11px + (14 - 11) * ((100vw - 1440px) / (1920 - 1440)));
   font-weight: 700;
   text-transform: uppercase;
-  padding: calc(17px + (23 - 17) * ((100vw - 1440px) / (1920 - 1440)))    calc(23px + (36 - 23) * ((100vw - 1440px) / (1920 - 1440)));
+  padding: calc(17px + (23 - 17) * ((100vw - 1440px) / (1920 - 1440)))
+    calc(23px + (36 - 23) * ((100vw - 1440px) / (1920 - 1440)));
   background: #cb884a;
   border: 2px solid #f0a560;
   box-shadow: 0px 0px 47px 5px #cb884a, inset 0px 0px 5px rgba(0, 0, 0, 0.25);
@@ -810,6 +822,17 @@ header {
   -moz-transition: box-shadow 0.5s;
   -ms-transition: box-shadow 0.5s;
   -o-transition: box-shadow 0.5s;
+}
+
+#overallBackground {
+  background: radial-gradient(
+    50% 50% at 50% 50%,
+    #363d45 0%,
+    rgba(24, 26, 32, 0) 50%
+  );
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 3000px 3000px;
 }
 
 /* Экран с участниками */
@@ -897,6 +920,7 @@ header {
 .page-test {
   background: url(/assets/image/test_img.png) center no-repeat;
   background-size: contain;
+  position: relative;
   height: 100vh;
 }
 
@@ -1106,13 +1130,21 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: calc(388px + (517 - 388) * ((100vw - 1440px) / (1920 - 1440)));
   background: #000000;
-  border-radius: 37.5px;
+  border-radius: 5%;
+  -webkit-border-radius: 5%;
+  -moz-border-radius: 5%;
+  -ms-border-radius: 5%;
+  -o-border-radius: 5%;
 }
 
 .buy-item_img img {
   width: 100%;
+  border-radius: 5%;
+  -webkit-border-radius: 5%;
+  -moz-border-radius: 5%;
+  -ms-border-radius: 5%;
+  -o-border-radius: 5%;
 }
 
 .buy-item_description {

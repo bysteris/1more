@@ -164,9 +164,10 @@ document.addEventListener("DOMContentLoaded", function () {
     },
     ease: "SlowMo",
   })
-  .to(".contest-wave", { yPercent: 20, ease: "SlowMo"}, 0)
+  .to(".contest-wave", { yPercent: 20, scale: 1, ease: "SlowMo"}, 0)
   .to(".contest-left-headphone", { marginLeft: 0 }, 0)
   .to(".contest-right-headphone", { marginRight: 0 }, 0)
+  .to(".contest-container", {yPercent: 20, ease: "SlowMo"}, 0)
   .to(".contest-description h1", { yPercent: 80, opacity: 1, ease: "SlowMo" }, 0)
   .to(".contest-description span", { yPercent: 300, opacity: 1, ease: "SlowMo" }, 0)
   .to(".contest-btn", { yPercent: -600, opacity: 1, ease: "SlowMo", transition: "translate 0.5s" }, 0)
