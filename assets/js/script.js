@@ -1,22 +1,4 @@
 document.addEventListener("DOMContentLoaded", function () {
-  //swiper на главном экране
-  var mySwiper = new Swiper(".swiper-container", {
-    direction: "vertical",
-    loop: false,
-    pagination: ".swiper-pagination",
-    grabCursor: false,
-    speed: 1000,
-    paginationClickable: true,
-    parallax: true,
-    autoplay: false,
-    effect: "slide",
-    //mousewheelControl: 1,
-    mousewheel: {
-      invert: false,
-      releaseOnEdges: true,
-    },
-  });
-
   // TimeLine Animation
   (function ($) {
     $(function () {
@@ -55,9 +37,11 @@ document.addEventListener("DOMContentLoaded", function () {
         agFlag = false;
 
         agTimelineLine.css({
-          top: agTimelineItem.first().find(agTimelinePoint).offset().top -
+          top:
+            agTimelineItem.first().find(agTimelinePoint).offset().top -
             agTimelineItem.first().offset().top,
-          bottom: agTimeline.offset().top +
+          bottom:
+            agTimeline.offset().top +
             agTimeline.outerHeight() -
             agTimelineItem.last().find(agTimelinePoint).offset().top,
         });
@@ -74,15 +58,15 @@ document.addEventListener("DOMContentLoaded", function () {
         n = agPosY - a + agOuterHeight / 2;
         i <= agPosY + agOuterHeight / 2 && (n = i - a);
         agTimelineLineProgress.css({
-          height: n + "px"
+          height: n + "px",
         });
 
         agTimelineItem.each(function () {
           var agTop = $(this).find(agTimelinePoint).offset().top;
 
-          agTop + agPosY - $(window).scrollTop() < agPosY + 0.5 * agOuterHeight ?
-            $(this).addClass("js-ag-active") :
-            $(this).removeClass("js-ag-active");
+          agTop + agPosY - $(window).scrollTop() < agPosY + 0.5 * agOuterHeight
+            ? $(this).addClass("js-ag-active")
+            : $(this).removeClass("js-ag-active");
         });
       }
 
@@ -96,6 +80,79 @@ document.addEventListener("DOMContentLoaded", function () {
   // GSAP scripts
   gsap.registerPlugin(ScrollTrigger);
 
+  // Hero Slider
+  function hero() {
+    const heroItems = gsap.utils.toArray(".hero-item");
+
+    const heroItemsTL = gsap.timeline();
+
+    function slideTL(heroItem, isFirst = false) {
+      const tlHero = gsap.timeline();
+
+      if (!isFirst) {
+        tlHero.from(heroItem, {
+          yPercent: 100,
+        });
+        tlHero.from(heroItem.querySelector(".circles-wrapper"), {
+          duration: 0.9,
+          transform: "rotateZ(45deg)",
+        },0.2);
+        tlHero.from(heroItem.querySelector(".section_img"), {
+            duration: 1,
+            opacity: 0,
+            x: -100,
+        },0.2);
+        tlHero.from(heroItem.querySelector(".section_title"), {
+          duration: 0.5,
+          opacity: 0,
+          x: -100,
+        },0.2);
+        tlHero.from(heroItem.querySelector(".section-description"), {
+          duration: 0.6,
+          opacity: 0,
+          x: -100,
+        },0.2);
+        tlHero.from(heroItem.querySelector(".section_mini-img"), {
+          duration: 0.7,
+          scale: 0,
+        },0.2);
+        tlHero.from(heroItem.querySelector(".gift"), {
+          duration: 1,
+          scale: 0,
+        },0.2);
+      }
+
+      tlHero.fromTo(
+        heroItem.querySelector(".hero_bg-img"),
+        { yPercent: isFirst ? 0 : 1 },
+        { yPercent: -1 },
+        0
+      );
+
+      return tlHero;
+    }
+
+    heroItems.forEach((heroItem, i) => {
+      if (i === 0) {
+        heroItemsTL.add(slideTL(heroItem, true));
+      } else {
+        heroItemsTL.add(slideTL(heroItem), "+=1");
+      }
+    });
+
+    ScrollTrigger.create({
+      animation: heroItemsTL,
+      trigger: ".hero-container",
+      start: "top top",
+      end: `+=${heroItems.length * 100}%`,
+      scrub: 1,
+      pin: true,
+      anticipatePin: 1,
+    });
+  }
+  hero();
+
+  // Banner with radius
   let radius = gsap.to(".banner-radius", {
     scrollTrigger: {
       trigger: ".banner-radius",
@@ -154,7 +211,8 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   // Headphones left and right to center
-  gsap.timeline({
+  gsap
+    .timeline({
       scrollTrigger: {
         trigger: ".page-contest",
         start: "0% 100%",
@@ -164,37 +222,65 @@ document.addEventListener("DOMContentLoaded", function () {
       },
       ease: "SlowMo",
     })
-    .to(".contest-wave", {
-      yPercent: 20,
-      scale: 1,
-      ease: "SlowMo"
-    }, 0)
-    .to(".contest-left-headphone", {
-      marginLeft: 0
-    }, 0)
-    .to(".contest-right-headphone", {
-      marginRight: 0
-    }, 0)
-    .to(".contest-container", {
-      yPercent: 20,
-      ease: "SlowMo"
-    }, 0)
-    .to(".contest-description h1", {
-      yPercent: 80,
-      opacity: 1,
-      ease: "SlowMo"
-    }, 0)
-    .to(".contest-description span", {
-      yPercent: 300,
-      opacity: 1,
-      ease: "SlowMo"
-    }, 0)
-    .to(".contest-btn", {
-      yPercent: -600,
-      opacity: 1,
-      ease: "SlowMo",
-      transition: "translate 0.5s"
-    }, 0);
+    .to(
+      ".contest-wave",
+      {
+        yPercent: 20,
+        scale: 1,
+        ease: "SlowMo",
+      },
+      0
+    )
+    .to(
+      ".contest-left-headphone",
+      {
+        marginLeft: 0,
+      },
+      0
+    )
+    .to(
+      ".contest-right-headphone",
+      {
+        marginRight: 0,
+      },
+      0
+    )
+    .to(
+      ".contest-container",
+      {
+        yPercent: 20,
+        ease: "SlowMo",
+      },
+      0
+    )
+    .to(
+      ".contest-description h1",
+      {
+        yPercent: 80,
+        opacity: 1,
+        ease: "SlowMo",
+      },
+      0
+    )
+    .to(
+      ".contest-description span",
+      {
+        yPercent: 300,
+        opacity: 1,
+        ease: "SlowMo",
+      },
+      0
+    )
+    .to(
+      ".contest-btn",
+      {
+        yPercent: -600,
+        opacity: 1,
+        ease: "SlowMo",
+        transition: "translate 0.5s",
+      },
+      0
+    );
 
   // Animation for title Page Buy
   gsap.from(".buy-title h1:nth-child(1)", {
@@ -326,9 +412,11 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     tl.fromTo(
-      slide.querySelector(".bg-img"), {
+      slide.querySelector(".bg-img"),
+      {
         xPercent: isFirst ? 0 : 8,
-      }, {
+      },
+      {
         xPercent: -8,
       },
       0.2
