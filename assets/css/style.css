@@ -967,7 +967,7 @@ body,
   position: fixed;
   height: 100%;
   top: 0;
-  background-color: rgba(32, 35, 43, 0.85);
+  background: rgba(16, 17, 18, 0.49);
   align-items: center;
   justify-content: center;
   /* display: none; */
@@ -990,7 +990,18 @@ body,
   display: flex;
 }
 
+.contest-modal_content {
+  background: #cb884a;
+  border-radius: 49px 0px 0px 49px;
+  width: 640px;
+  height: 100%;
+  position: absolute;
+  right: 0;
+}
 
+.contest-modal_wrapper {
+  padding: 238px 120px;
+}
 
 .test-modal {
   position: fixed;
