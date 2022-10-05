@@ -55,11 +55,9 @@ document.addEventListener("DOMContentLoaded", function () {
         agFlag = false;
 
         agTimelineLine.css({
-          top:
-            agTimelineItem.first().find(agTimelinePoint).offset().top -
+          top: agTimelineItem.first().find(agTimelinePoint).offset().top -
             agTimelineItem.first().offset().top,
-          bottom:
-            agTimeline.offset().top +
+          bottom: agTimeline.offset().top +
             agTimeline.outerHeight() -
             agTimelineItem.last().find(agTimelinePoint).offset().top,
         });
@@ -75,14 +73,16 @@ document.addEventListener("DOMContentLoaded", function () {
           agTimelineLineProgress.offset().top + agPosY - $(window).scrollTop();
         n = agPosY - a + agOuterHeight / 2;
         i <= agPosY + agOuterHeight / 2 && (n = i - a);
-        agTimelineLineProgress.css({ height: n + "px" });
+        agTimelineLineProgress.css({
+          height: n + "px"
+        });
 
         agTimelineItem.each(function () {
           var agTop = $(this).find(agTimelinePoint).offset().top;
 
-          agTop + agPosY - $(window).scrollTop() < agPosY + 0.5 * agOuterHeight
-            ? $(this).addClass("js-ag-active")
-            : $(this).removeClass("js-ag-active");
+          agTop + agPosY - $(window).scrollTop() < agPosY + 0.5 * agOuterHeight ?
+            $(this).addClass("js-ag-active") :
+            $(this).removeClass("js-ag-active");
         });
       }
 
@@ -128,7 +128,7 @@ document.addEventListener("DOMContentLoaded", function () {
       trigger: ".banner-description_wrapper",
       start: "100% 100%",
       end: "bottom bottom",
-      scrub: 1,
+      scrub: 2,
       //markers: true
     },
     xPercent: -10,
@@ -155,22 +155,163 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Headphones left and right to center
   gsap.timeline({
+      scrollTrigger: {
+        trigger: ".page-contest",
+        start: "0% 100%",
+        end: "bottom bottom",
+        scrub: 1,
+        //markers: true,
+      },
+      ease: "SlowMo",
+    })
+    .to(".contest-wave", {
+      yPercent: 20,
+      scale: 1,
+      ease: "SlowMo"
+    }, 0)
+    .to(".contest-left-headphone", {
+      marginLeft: 0
+    }, 0)
+    .to(".contest-right-headphone", {
+      marginRight: 0
+    }, 0)
+    .to(".contest-container", {
+      yPercent: 20,
+      ease: "SlowMo"
+    }, 0)
+    .to(".contest-description h1", {
+      yPercent: 80,
+      opacity: 1,
+      ease: "SlowMo"
+    }, 0)
+    .to(".contest-description span", {
+      yPercent: 300,
+      opacity: 1,
+      ease: "SlowMo"
+    }, 0)
+    .to(".contest-btn", {
+      yPercent: -600,
+      opacity: 1,
+      ease: "SlowMo",
+      transition: "translate 0.5s"
+    }, 0);
+
+  // Animation for title Page Buy
+  gsap.from(".buy-title h1:nth-child(1)", {
     scrollTrigger: {
-      trigger: ".page-contest",
+      trigger: ".page-buy",
       start: "0% 100%",
       end: "bottom bottom",
       scrub: 1,
-      //markers: true,
+      //markers: true
     },
+    xPercent: -20,
+    opacity: 0,
     ease: "SlowMo",
-  })
-  .to(".contest-wave", { yPercent: 20, scale: 1, ease: "SlowMo"}, 0)
-  .to(".contest-left-headphone", { marginLeft: 0 }, 0)
-  .to(".contest-right-headphone", { marginRight: 0 }, 0)
-  .to(".contest-container", {yPercent: 20, ease: "SlowMo"}, 0)
-  .to(".contest-description h1", { yPercent: 80, opacity: 1, ease: "SlowMo" }, 0)
-  .to(".contest-description span", { yPercent: 300, opacity: 1, ease: "SlowMo" }, 0)
-  .to(".contest-btn", { yPercent: -600, opacity: 1, ease: "SlowMo", transition: "translate 0.5s" }, 0)
+  });
+
+  gsap.from(".buy-title h1:nth-child(2)", {
+    scrollTrigger: {
+      trigger: ".page-buy",
+      start: "0% 100%",
+      end: "bottom bottom",
+      scrub: 1,
+      //markers: true
+    },
+    xPercent: -30,
+    opacity: 0,
+    ease: "SlowMo",
+  });
+
+  gsap.from(".buy-title h1:nth-child(3)", {
+    scrollTrigger: {
+      trigger: ".page-buy",
+      start: "0% 100%",
+      end: "bottom bottom",
+      scrub: 1,
+      //markers: true
+    },
+    xPercent: -40,
+    opacity: 0,
+    ease: "SlowMo",
+  });
+
+  //Animation block for Page Buy
+  gsap.from(".buy-item:nth-child(1) .buy-item_img", {
+    scrollTrigger: {
+      trigger: ".buy-item:nth-child(1) .buy-item_img",
+      start: "0% 100%",
+      end: "10% 100%",
+      scrub: 1,
+    },
+    yPercent: 20,
+    ease: "SlowMo",
+  });
+
+  gsap.from(".buy-item:nth-child(1) .buy-item_img img", {
+    scrollTrigger: {
+      trigger: ".buy-item:nth-child(1) .buy-item_img img",
+      start: "0% 100%",
+      end: "20% 100%",
+      scrub: 1,
+    },
+    yPercent: 20,
+    ease: "SlowMo",
+  });
+
+  gsap.from(".buy-item:nth-child(2) .buy-item_img", {
+    scrollTrigger: {
+      trigger: ".buy-item:nth-child(2) .buy-item_img",
+      start: "0% 100%",
+      end: "10% 100%",
+      scrub: 1,
+    },
+    yPercent: 20,
+    ease: "SlowMo",
+  });
+
+  gsap.from(".buy-item:nth-child(2) .buy-item_img img", {
+    scrollTrigger: {
+      trigger: ".buy-item:nth-child(2) .buy-item_img img",
+      start: "0% 100%",
+      end: "20% 100%",
+      scrub: 1,
+    },
+    yPercent: 20,
+    ease: "SlowMo",
+  });
+
+  gsap.from(".buy-item:nth-child(3) .buy-item_img", {
+    scrollTrigger: {
+      trigger: ".buy-item:nth-child(3) .buy-item_img",
+      start: "0% 100%",
+      end: "10% 100%",
+      scrub: 1,
+    },
+    yPercent: 20,
+    ease: "SlowMo",
+  });
+
+  gsap.from(".buy-item:nth-child(3) .buy-item_img img", {
+    scrollTrigger: {
+      trigger: ".buy-item:nth-child(3) .buy-item_img img",
+      start: "0% 100%",
+      end: "20% 100%",
+      scrub: 1,
+    },
+    yPercent: 20,
+    ease: "SlowMo",
+  });
+
+  // hover effect on btn
+  let $buyItemBtn = $(".buy-item_btn"),
+    $buyItemImg = $(".buy-item_img");
+
+  $buyItemBtn.each(function (i) {
+    $(this).hover(function () {
+      $buyItemImg.eq(i).toggleClass("active");
+    });
+  });
 
   // Horizontal Scroll Second Banner
   const slides = gsap.utils.toArray(".slide");
@@ -185,11 +326,9 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     tl.fromTo(
-      slide.querySelector(".bg-img"),
-      {
+      slide.querySelector(".bg-img"), {
         xPercent: isFirst ? 0 : 8,
-      },
-      {
+      }, {
         xPercent: -8,
       },
       0.2
