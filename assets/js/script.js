@@ -1,4 +1,37 @@
 document.addEventListener("DOMContentLoaded", function () {
+  // Плавная прокрутка по якорям
+  $("a[href*='#']").on("click", function (e) {
+    var anchor = $(this);
+
+    if ($(".header-burger").hasClass("active")) {
+      $("html, body")
+        .stop()
+        .animate(
+          {
+            scrollTop: $(anchor.attr("href")).offset().top,
+          },
+          {
+            duration: 900,
+            easing: "swing",
+          }
+        );
+    } else {
+      $("html, body")
+        .stop()
+        .animate(
+          {
+            scrollTop: $(anchor.attr("href")).offset().top,
+          },
+          {
+            duration: 1000,
+            easing: "swing",
+          }
+        );
+    }
+    e.preventDefault();
+    return false;
+  });
+
   // TimeLine Animation
   (function ($) {
     $(function () {
@@ -100,26 +133,26 @@ document.addEventListener("DOMContentLoaded", function () {
         tlHero.from(heroItem.querySelector(".section_img"), {
             duration: 1,
             opacity: 0,
-            x: -100,
-        },0.2);
+            x: -200,
+        },0.8);
         tlHero.from(heroItem.querySelector(".section_title"), {
           duration: 0.5,
           opacity: 0,
           x: -100,
-        },0.2);
+        },0.5);
         tlHero.from(heroItem.querySelector(".section-description"), {
           duration: 0.6,
           opacity: 0,
           x: -100,
-        },0.2);
+        },0.5);
         tlHero.from(heroItem.querySelector(".section_mini-img"), {
           duration: 0.7,
           scale: 0,
-        },0.2);
+        },0.6);
         tlHero.from(heroItem.querySelector(".gift"), {
           duration: 1,
           scale: 0,
-        },0.2);
+        },0.9);
       }
 
       tlHero.fromTo(
@@ -442,6 +475,37 @@ document.addEventListener("DOMContentLoaded", function () {
     pin: true,
     anticipatePin: 1,
   });
+
+  // Открытие и закрытие меню
+  let headerBurger = document.querySelector(".header-burger"),
+      burgerMenu = document.querySelector(".burger-menu");
+
+  headerBurger.addEventListener("click", function () {
+    burgerMenu.classList.toggle("active");
+  });
+
+
+
+  // Открытие и закрытие формы на блоке с конкурсом
+  let contestBtn = document.querySelector(".contest-btn"),
+      contestModal = document.querySelector(".contest-modal"),
+      contestModalContent = document.querySelector(".contest-modal_content"),
+      contestModalClose = document.querySelector(".contest-modal_close");
+
+  contestBtn.addEventListener("click", function () {
+    contestModal.classList.add("active");
+    contestModalContent.classList.add("active");
+    contestModalClose.classList.add("active");
+  });
+
+  contestModalClose.addEventListener("click", function () {
+    setTimeout(function() {
+      contestModal.classList.remove("active");
+    },800);
+    contestModalContent.classList.remove("active");
+    contestModalClose.classList.remove("active");
+  });
+
 
   // Открытие и закрытие модального окна у теста
   let testModal = document.querySelector(".test-modal"),

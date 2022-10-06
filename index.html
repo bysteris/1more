@@ -46,7 +46,7 @@
     </header>
 
     <!-- Page Hero -->
-    <div class="hero-container">
+    <div class="hero-container" id="hero">
         <section id="heroItem-1" class="hero-item">
 
             <img src="/assets/image/first-page.jpg" class="hero_bg-img" />
@@ -73,9 +73,11 @@
                 <img src="/assets/image/evo.png" alt="" srcset="">
             </div>
 
-            <div class="gift">
-                <span>дарим наушники</span>
-            </div>
+            <a href="#contest">
+                <div class="gift">
+                    <span>дарим наушники</span>
+                </div>
+            </a>
 
             <div class="section_title">
                 <h1>evo</h1>
@@ -139,9 +141,11 @@
                 </p>
             </div>
 
-            <div class="gift">
-                <span>дарим наушники</span>
-            </div>
+            <a href="#contest">
+                <div class="gift">
+                    <span>дарим наушники</span>
+                </div>
+            </a>
 
             <div class="section_mini-img">
                 <img src="/assets/image/girl_with_comfobuds.png" alt="" srcset="">
@@ -194,9 +198,11 @@
                 <p>Новый уровень качества звонков в идеальном дизайне.</p>
             </div>
 
-            <div class="gift">
-                <span>дарим наушники</span>
-            </div>
+            <a href="#contest">
+                <div class="gift">
+                    <span>дарим наушники</span>
+                </div>
+            </a>
 
             <div class="section_mini-img">
                 <img src="/assets/image/girl_with_pistonbuds.jpg" alt="" srcset="">
@@ -221,7 +227,7 @@
     <!-- End Page Hero -->
 
     <!-- Page Timeline -->
-    <div class="evolution-page first-background">
+    <div class="evolution-page first-background" id="timeline">
         <div class="evolution-wrapper">
             <div class="js-timeline ag-timeline">
                 <div class="js-timeline_line ag-timeline_line">
@@ -508,7 +514,7 @@
     <!-- End Page Timeline -->
 
     <!-- Page Banner -->
-    <div class="page-banner">
+    <div class="page-banner" id="banner">
         <div class="banner-wrapper">
             <div class="banner_horizontal-container">
 
@@ -550,7 +556,7 @@
     <!-- Overall background for contest and participants pages -->
     <div id="overallBackground">
         <!-- Page Contest -->
-        <div class="page-contest">
+        <div class="page-contest" id="contest">
 
             <div class="contest-wrapper">
                 <img class="contest-wave" src="/assets/image/contest_wave.png" alt="">
@@ -576,7 +582,7 @@
         <!-- End Page Contest -->
 
         <!-- Page Participants -->
-        <div class="page-participants">
+        <div class="page-participants" id="participants">
             <div class="participants-wrapper">
 
                 <div class="participants-items">
@@ -636,7 +642,7 @@
     <!-- End Overall background for contest and participants pages -->
 
     <!-- Page Test-->
-    <div class="page-test">
+    <div class="page-test" id="test">
         <div class="test-wrapper">
             <div class="test-container">
                 <span>получи возможность выиграть скидку!</span>
@@ -651,7 +657,7 @@
     <!-- End Page Test -->
 
     <!-- Page Buy -->
-    <div class="page-buy">
+    <div class="page-buy" id="buy">
         <div class="buy-wrapper">
             <div class="buy-title">
                 <h1>Слышать больше</h1>
@@ -715,11 +721,13 @@
     <!-- End Page Second Banner -->
 
     <!-- Page Contacts -->
-    <div class="page-contacts">
+    <div class="page-contacts" id="contacts">
         <div class="contacts-wrapper">
+
             <div class="contacts-logo">
                 <img src="/assets/image/logo_banner.png" alt="">
             </div>
+
             <div class="contacts-container">
                 <div class="contacts-left">
                     <p class="upper">Служба поддержки</p>
@@ -760,34 +768,50 @@
 
 
     <!-- Modal content -->
-    <div class="modal">
-        <div class="overlay">
-            <!-- Contest -->
-            <div class="contest-modal">
-                <div class="contest-modal_content">
-                    <div class="contest-modal_wrapper">
-                        <h3>ПРИСЫЛАЙ <br>И ВЫИГРЫВАЙ!</h3>
-                        <form action="" class="">
-                            <input class="contest-input" type="text" name="name" id="" placeholder="Ник">
-                            <input class="contest-input" type="text" name="city" id="" placeholder="Город">
-                            <input class="contest-input" type="text" name="model" id="" placeholder="Модель">
-                            <input class="contest-input contest-input_file" type="file" name="photo" id="file" accept="image/*">
-                            
-                            <label class="contest-checkbox" for="policy">
-                                <input type="checkbox" name="policy" id="policy" required checked>
-                                <p><a href="" target="_blank">Я согласен на обработку персональных данных</a></p>
-                            </label>
-                            <input class="form_contest-btn" type="submit" value="хочу победить!">
-                        </form>
-                    </div>
-                </div>
-            </div>
-            <!-- End Contest -->
 
-            
+    <div class="burger-menu">
+        <div class="burger-menu_wrapper">
+            <div class="burger-menu_content">
+                <ul class="burger-menu_list">
+                    <li class="burger-menu_list-item"><a href="#">Главная</a></li>
+                    <li class="burger-menu_list-item"><a href="#">Таймлайн</a></li>
+                    <li class="burger-menu_list-item"><a href="#">EVO</a></li>
+                    <li class="burger-menu_list-item"><a href="#">Конкурс</a></li>
+                    <li class="burger-menu_list-item"><a href="#">Тест</a></li>
+                    <li class="burger-menu_list-item"><a href="#">Модели</a></li>
+                    <li class="burger-menu_list-item"><a href="#">Контакты</a></li>
+                </ul>
+            </div>
         </div>
     </div>
-    <!-- End Modal content -->
+
+    <!-- Contest -->
+    <div class="contest-modal">
+        <div class="contest-modal_close"></div>
+        <div class="contest-modal_content">
+            <div class="contest-modal_wrapper">
+                <h3>ПРИСЫЛАЙ <br>И ВЫИГРЫВАЙ!</h3>
+                <form action="" class="">
+                    <input class="contest-input" type="text" name="name" id="" placeholder="Ник">
+                    <input class="contest-input" type="text" name="city" id="" placeholder="Город">
+                    <input class="contest-input" type="text" name="model" id="" placeholder="Модель">
+
+
+                    <input type="file" name="file" id="file">
+                    <label for="file" class="contest_btn-file">Прикрепить файл</label>
+
+                    <label class="contest-checkbox" for="policy">
+                        <input type="checkbox" name="policy" id="policy" required checked>
+                        <p><a href="" target="_blank">Я согласен на обработку персональных данных</a></p>
+                    </label>
+
+                    <input class="form_contest-btn" type="submit" value="хочу победить!">
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- End Contest -->
+
     <!-- Test -->
     <div class="test-modal">
         <div class="test-modal_wrapper">
@@ -814,6 +838,8 @@
         </div>
     </div>
     <!-- End Test -->
+
+    <!-- End Modal content -->
 
     <script src="/assets/js/jquery.min.js"></script>
     <!-- <script src="/assets/js/swiper-bundle.min.js"></script> -->
