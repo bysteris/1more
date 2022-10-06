@@ -765,52 +765,55 @@
             <!-- Contest -->
             <div class="contest-modal">
                 <div class="contest-modal_content">
-                    <div class="contest-modal_close">
-                        <span></span>
-                        <span></span>
-                    </div>
                     <div class="contest-modal_wrapper">
-                        <h3>ПРИСЫЛАЙ И ВЫИГРЫВАЙ!</h3>
-                        <form action="">
-                            <input type="text" name="" id="" placeholder="Ник">
-                            <input type="text" name="" id="" placeholder="Город">
-                            <input type="text" name="" id="" placeholder="Модель">
-                            <input type="file" name="" id="" accept="image/*" placeholder="Прикрепить файл">
+                        <h3>ПРИСЫЛАЙ <br>И ВЫИГРЫВАЙ!</h3>
+                        <form action="" class="">
+                            <input class="contest-input" type="text" name="name" id="" placeholder="Ник">
+                            <input class="contest-input" type="text" name="city" id="" placeholder="Город">
+                            <input class="contest-input" type="text" name="model" id="" placeholder="Модель">
+                            <input class="contest-input contest-input_file" type="file" name="photo" id="file" accept="image/*">
+                            
+                            <label class="contest-checkbox" for="policy">
+                                <input type="checkbox" name="policy" id="policy" required checked>
+                                <p><a href="" target="_blank">Я согласен на обработку персональных данных</a></p>
+                            </label>
+                            <input class="form_contest-btn" type="submit" value="хочу победить!">
                         </form>
                     </div>
                 </div>
             </div>
             <!-- End Contest -->
 
-            <!-- Test -->
-            <div class="test-modal">
-                <div class="test-modal_wrapper">
-                    <div class="test-modal_content">
-                        <div class="test-modal_header">
-                            <h3>Кто создал первые в мире стереонаушники?</h3>
-                        </div>
-                        <div class="test-modal_body">
-                            <div class="test-modal_body-item">
-                                <span>Томас Эдисон</span>
-                            </div>
-                            <div class="test-modal_body-item">
-                                <span>Томас Эдисон</span>
-                            </div>
-                            <div class="test-modal_body-item">
-                                <span>Томас Эдисон</span>
-                            </div>
-                        </div>
-                        <div class="test-modal_footer">
-                            <span>1/10</span>
-                        </div>
-                    </div>
-                    <div class="test-modal_close"></div>
-                </div>
-            </div>
-            <!-- End Test -->
+            
         </div>
     </div>
     <!-- End Modal content -->
+    <!-- Test -->
+    <div class="test-modal">
+        <div class="test-modal_wrapper">
+            <div class="test-modal_content">
+                <div class="test-modal_header">
+                    <h3>Кто создал первые в мире стереонаушники?</h3>
+                </div>
+                <div class="test-modal_body">
+                    <div class="test-modal_body-item">
+                        <span>Томас Эдисон</span>
+                    </div>
+                    <div class="test-modal_body-item">
+                        <span>Томас Эдисон</span>
+                    </div>
+                    <div class="test-modal_body-item">
+                        <span>Томас Эдисон</span>
+                    </div>
+                </div>
+                <div class="test-modal_footer">
+                    <span>1/10</span>
+                </div>
+            </div>
+            <div class="test-modal_close"></div>
+        </div>
+    </div>
+    <!-- End Test -->
 
     <script src="/assets/js/jquery.min.js"></script>
     <!-- <script src="/assets/js/swiper-bundle.min.js"></script> -->
