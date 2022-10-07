@@ -9,8 +9,6 @@
 
     <link rel="stylesheet" href="/assets/css/normalize.css">
     <link rel="stylesheet" href="/assets/css/style.css">
-    <!-- <link rel="stylesheet" href="/assets/css/swiper-bundle.min.css">
-    <link rel="stylesheet" href="/assets/css/swiper.settings.css"> -->
 
 </head>
 
@@ -817,22 +815,15 @@
         <div class="test-modal_wrapper">
             <div class="test-modal_content">
                 <div class="test-modal_header">
-                    <h3>Кто создал первые в мире стереонаушники?</h3>
+                    <h3 class="test-modal_head__content" id="headTest"></h3>
                 </div>
-                <div class="test-modal_body">
-                    <div class="test-modal_body-item">
-                        <span>Томас Эдисон</span>
-                    </div>
-                    <div class="test-modal_body-item">
-                        <span>Томас Эдисон</span>
-                    </div>
-                    <div class="test-modal_body-item">
-                        <span>Томас Эдисон</span>
-                    </div>
+                <div class="test-modal_body" id="buttonsTest">
+                    <div class="test-modal_body-item"></div>
+                    <div class="test-modal_body-item wrong"></div>
+                    <div class="test-modal_body-item correct"></div>
+                    <div class="test-modal_body-item passive"></div>
                 </div>
-                <div class="test-modal_footer">
-                    <span>1/10</span>
-                </div>
+                <div class="test-modal_footer" id="pages"></div>
             </div>
             <div class="test-modal_close"></div>
         </div>
@@ -842,8 +833,8 @@
     <!-- End Modal content -->
 
     <script src="/assets/js/jquery.min.js"></script>
-    <!-- <script src="/assets/js/swiper-bundle.min.js"></script> -->
     <script src="/assets/js/script.js"></script>
+    <script src="/assets/js/test.js"></script>
 
     <script src="/assets/js/gsap.min.js"></script>
     <script src="/assets/js/ScrollTrigger.min.js"></script>

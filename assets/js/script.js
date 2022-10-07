@@ -481,10 +481,9 @@ document.addEventListener("DOMContentLoaded", function () {
       burgerMenu = document.querySelector(".burger-menu");
 
   headerBurger.addEventListener("click", function () {
+    this.classList.toggle("active");
     burgerMenu.classList.toggle("active");
   });
-
-
 
   // Открытие и закрытие формы на блоке с конкурсом
   let contestBtn = document.querySelector(".contest-btn"),
