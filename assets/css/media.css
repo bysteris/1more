@@ -1,0 +1,34 @@
+@media (max-width: 1025px) {
+  body {
+    font-size: calc(14px + (18 - 14) * ((100vw - 1024px) / (1440 - 1024)));
+  }
+
+  h1 {
+    font-size: calc(40px + (48 - 40) * ((100vw - 1024px) / (1440 - 1024)));
+  }
+
+  .header-wrapper {
+    padding: calc(14px + (20 - 14) * ((100vw - 1024px) / (1440 - 1024)))
+      calc(27px + (36 - 27) * ((100vw - 1024px) / (1440 - 1024)));
+  }
+
+  .header-tagline {
+    font-size: 10px;
+  }
+
+  .header-burger {
+    width: calc(32px + (35 - 32) * ((100vw - 1024px) / (1440 - 1024)));
+    height: calc(32px + (35 - 32) * ((100vw - 1024px) / (1440 - 1204)));
+  }
+
+  .circles-wrapper {
+    padding: 0 calc(158px + (223 - 158) * ((100vw - 1024px) / (1440 - 1024)));
+  }
+
+  .gift {
+    top: calc(194px + (175 - 194) * ((100vw - 1024px) / (1440 - 1024)));
+    right: calc(254px + (377 - 254) * ((100vw - 1024px) / (1440 - 1024)));
+    width: calc(105px + (108 - 105) * ((100vw - 1024px) / (1440 - 1024)));
+    height: calc(105px + (108 - 105) * ((100vw - 1024px) / (1440 - 1024)));
+  }
+}

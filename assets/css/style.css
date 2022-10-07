@@ -133,7 +133,7 @@ header {
   -moz-transition: bottom 0.1s, transform 0.4s;
   -ms-transition: bottom 0.1s, transform 0.4s;
   -o-transition: bottom 0.1s, transform 0.4s;
-  transition-delay: .0s, 0.2s;
+  transition-delay: 0s, 0.2s;
   transition-property: bottom, transform;
 }
 
@@ -149,7 +149,7 @@ header {
   -moz-transition: bottom 0.1s, transform 0.3s;
   -ms-transition: bottom 0.1s, transform 0.3s;
   -o-transition: bottom 0.1s, transform 0.3s;
-  transition-delay: .0s, 0.2s;
+  transition-delay: 0s, 0.2s;
   transition-property: bottom, transform;
 }
 
@@ -1337,11 +1337,6 @@ footer .right-block span {
   height: 100vh;
   z-index: 90;
   background: #fe3b1f;
-  /* transition: top 0.8s;
-  -webkit-transition: top 0.8s;
-  -moz-transition: top 0.8s;
-  -ms-transition: top 0.8s;
-  -o-transition: top 0.8s; */
 }
 
 .burger-menu.active {
@@ -1369,15 +1364,74 @@ footer .right-block span {
 .burger-menu_content .burger-menu_list > .burger-menu_list-item {
   list-style-type: none;
   font-family: Halvar Breitschrift DEMO;
-  font-size: 72px;
+  font-size: calc(64px + (72 - 64) * ((100vw - 1440px) / (1920 - 1440)));
   font-weight: 700;
-  padding: 5px 200px;
+  padding: 5px  calc(150px + (200 - 150) * ((100vw - 1440px) / (1920 - 1440)));
   cursor: pointer;
 }
 
 .burger-menu_list-item:hover {
   color: #fe3b1f;
   background-color: #ffffff;
+}
+
+/* Модальное окно у баннера */
+.banner-modal {
+  position: absolute;
+  top: -10000%;
+  /* position: fixed;
+  top: 0; */
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(16, 17, 18, 0.49);
+  z-index: 100;
+}
+
+.banner-modal.active {
+  position: fixed;
+  top: 0;
+}
+
+.banner-modal_wrapper {
+  width: 100%;
+  height: 100%;
+}
+
+.banner-modal_content {
+  position: absolute;
+  top: calc(82px + (110 - 82) * ((100vw - 1440px) / (1920 - 1440)));
+  right: 0;
+  /* bottom: -1000%; */
+  bottom: 0; 
+  margin-right: calc(27px + (37 - 27) * ((100vw - 1440px) / (1920 - 1440)));
+  width: calc(693px + (922 - 693) * ((100vw - 1440px) / (1920 - 1440)));
+  height: 100%;
+  padding: calc(16px + (20 - 16) * ((100vw - 1440px) / (1920 - 1440)))
+    calc(44px + (60 - 44) * ((100vw - 1440px) / (1920 - 1440)));
+  background: #cb884a;
+  border-radius: 49px 49px 0px 0px;
+}
+
+.banner-modal_items {
+  display: grid;
+  /* grid-template-rows: repeat(5, calc(124px + (165 - 124) * (100vw - 1440px) / (1920 - 1440))); */
+  grid-template-columns: repeat(2, 1fr);
+  width: 100%;
+  /* height: 100%; */
+}
+
+.banner-modal_item {
+  display: flex;
+  align-items: center;
+  height: calc(124px + (165 - 124) * ((100vw - 1440px) / (1920 - 1440)));
+}
+
+.banner-modal_item img {
+}
+
+.banner-modal_item span {
+  font-size: calc(11px + (14 - 11) * ((100vw - 1440px) / (1920 - 1440)));
 }
 
 /* Модальное окно формы */
@@ -1404,8 +1458,8 @@ footer .right-block span {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 47px;
-  width: 47px;
+  height: calc(35px + (47 - 35) * ((100vw - 1440px) / (1920 - 1440)));
+  width: calc(35px + (47 - 35) * ((100vw - 1440px) / (1920 - 1440)));
   background: rgba(0, 0, 0, 0.15);
   border: 2px solid rgba(255, 255, 255, 0.5);
   border-radius: 50px;
@@ -1498,7 +1552,7 @@ footer .right-block span {
 }
 
 .contest-modal_wrapper {
-  padding: 238px 120px;
+  padding:  calc(178px + (238 - 178) * ((100vw - 1440px) / (1920 - 1440))) calc(90px + (120 - 90) * ((100vw - 1440px) / (1920 - 1440)));
 }
 
 .contest-modal form {
