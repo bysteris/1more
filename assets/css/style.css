@@ -604,6 +604,7 @@ body,
 
 /* Экран с баннером */
 .page-banner {
+  overflow-x: hidden;
 }
 
 .banner-wrapper {
