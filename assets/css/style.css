@@ -1233,7 +1233,7 @@ body,
   align-items: center;
   text-align: center;
   font-size: calc(10px + (14 - 10) * ((100vw - 1440px) / (1920 - 1440)));
-  margin-top: 40px;
+  margin-top: 50px;
   border: 2px solid #ffffff;
   border-radius: 5000px;
   cursor: pointer;
@@ -1338,14 +1338,12 @@ footer .right-block span {
 
 /* Модальное окно у баннера */
 .banner-modal {
-  /* position: absolute;
-  top: -10000%; */
-  position: fixed;
-  top: 0;
+  position: absolute;
+  top: -10000%;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(16, 17, 18, 0.49);
+  background: rgba(14, 15, 16, 0.76);
   z-index: 100;
 }
 
@@ -1361,36 +1359,126 @@ footer .right-block span {
 
 .banner-modal_content {
   position: absolute;
-  top: calc(82px + (110 - 82) * ((100vw - 1440px) / (1920 - 1440)));
   right: 0;
-  /* bottom: -1000%; */
-  bottom: 0;
+  top: 100%;
+  z-index: -1;
   margin-right: calc(27px + (37 - 27) * ((100vw - 1440px) / (1920 - 1440)));
   width: calc(693px + (922 - 693) * ((100vw - 1440px) / (1920 - 1440)));
   height: 100%;
   padding: calc(16px + (20 - 16) * ((100vw - 1440px) / (1920 - 1440))) calc(44px + (60 - 44) * ((100vw - 1440px) / (1920 - 1440)));
   background: #cb884a;
   border-radius: 49px 49px 0px 0px;
+  transition: all 1s ease-in-out;
+}
+
+.banner-modal_content.active {
+  top: calc(82px + (110 - 82) * ((100vw - 1440px) / (1920 - 1440)));
+  z-index: 10;
+  transition: all 1s ease-in-out;
 }
 
 .banner-modal_items {
   display: grid;
-  /* grid-template-rows: repeat(5, calc(124px + (165 - 124) * (100vw - 1440px) / (1920 - 1440))); */
+  justify-items: stretch;
   grid-template-columns: repeat(2, 1fr);
-  width: 100%;
-  /* height: 100%; */
 }
 
 .banner-modal_item {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  padding: 0 calc(45px + (60 - 45) * ((100vw - 1440px) / (1920 - 1440)));
   height: calc(124px + (165 - 124) * ((100vw - 1440px) / (1920 - 1440)));
 }
 
-.banner-modal_item img {}
+.banner-modal_item:not(.banner-modal_item:nth-child(2n)) {
+  border-right: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.banner-modal_item:not(.banner-modal_item:last-child) {
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.banner-modal_item img {
+  display: block;
+}
 
 .banner-modal_item span {
+  display: block;
   font-size: calc(11px + (14 - 11) * ((100vw - 1440px) / (1920 - 1440)));
+  width: calc(152px + (202 - 152) * ((100vw - 1440px) / (1920 - 1440)));
+}
+
+.banner-modal_close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: calc(35px + (47 - 35) * ((100vw - 1440px) / (1920 - 1440)));
+  width: calc(35px + (47 - 35) * ((100vw - 1440px) / (1920 - 1440)));
+  background: rgba(0, 0, 0, 0.15);
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-radius: 50px;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  -ms-border-radius: 50px;
+  -o-border-radius: 50px;
+  margin: 19px 37px;
+  z-index: 10;
+  overflow: hidden;
+  cursor: pointer;
+  scale: 0;
+  transition: scale 0.4s ease-in-out;
+  -webkit-transition: scale 0.4s ease-in-out;
+  -moz-transition: scale 0.4s ease-in-out;
+  -ms-transition: scale 0.4s ease-in-out;
+  -o-transition: scale 0.4s ease-in-out;
+}
+
+.banner-modal_close:hover {
+  background: #ffffff;
+  box-shadow: 0px 0px 47px 5px #cb884a, inset 0px 0px 5px rgb(0 0 0 / 25%);
+}
+
+.banner-modal_close.active {
+  scale: 1;
+  transition-delay: 0.7s;
+}
+
+.banner-modal_close::before,
+.banner-modal_close::after {
+  position: absolute;
+  content: "";
+  display: block;
+  height: 1px;
+  width: 60%;
+  background-color: #ffffff;
+  transform-origin: center center;
+  z-index: 10;
+}
+
+.banner-modal_close:hover::before,
+.banner-modal_close:hover::after {
+  background-color: #111112;
+}
+
+.banner-modal_close:before {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+}
+
+.banner-modal_close::after {
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
 }
 
 /* Модальное окно формы */
@@ -1426,7 +1514,7 @@ footer .right-block span {
   -moz-border-radius: 50px;
   -ms-border-radius: 50px;
   -o-border-radius: 50px;
-  margin: 19px 37px;
+  margin: calc(14px + (19 - 14) * ((100vw - 1440px) / (1920 - 1440))) calc(28px + (37 - 28) * ((100vw - 1440px) / (1920 - 1440)));
   z-index: 10;
   overflow: hidden;
   cursor: pointer;
@@ -1484,7 +1572,7 @@ footer .right-block span {
 .contest-modal_content {
   background: #cb884a;
   border-radius: 49px 0px 0px 49px;
-  width: 640px;
+  width: calc(480px + (640 - 480) * ((100vw - 1440px) / (1920 - 1440)));
   height: 100%;
   position: absolute;
   right: -50%;
@@ -1528,7 +1616,7 @@ footer .right-block span {
 }
 
 .contest-input {
-  margin-bottom: 15px;
+  margin-bottom: calc(11px + (15 - 11) * ((100vw - 1440px) / (1920 - 1440)));
   color: #ffffff;
   background: transparent;
   border: 2px solid #ffffff;
@@ -1549,7 +1637,7 @@ footer .right-block span {
 }
 
 [type="file"]+label.contest_btn-file {
-  margin-bottom: 15px;
+  margin-bottom: calc(11px + (15 - 11) * ((100vw - 1440px) / (1920 - 1440)));
   text-align: initial;
   color: #efceaf;
   background: transparent;
@@ -1591,8 +1679,6 @@ footer .right-block span {
 }
 
 [type="file"]+label.contest_btn-file:hover::before {
-  /*right: 88%;
-  */
   opacity: 1;
   transition: all 0.8s;
   -webkit-transition: all 0.8s;
@@ -1604,7 +1690,7 @@ footer .right-block span {
 .contest-checkbox {
   display: flex;
   align-items: center;
-  margin-bottom: 40px;
+  margin-bottom: calc(26px + (40 - 26) * ((100vw - 1440px) / (1920 - 1440)));
 }
 
 .contest-checkbox input {
@@ -1762,6 +1848,7 @@ footer .right-block span {
 .test-modal_header {}
 
 .test-modal_header h3 {
+  padding: 0 calc(143px + (191 - 143) * ((100vw - 1440px) / (1920 - 1440)));
   font-family: Halvar Breitschrift DEMO;
   font-size: calc(24px + (32 - 24) * ((100vw - 1440px) / (1920 - 1440)));
   font-weight: 700;
@@ -1771,7 +1858,7 @@ footer .right-block span {
 
 .test-modal_body {
   width: 100%;
-  padding: 150px 102px;
+  padding: calc(112px + (150 - 112) * ((100vw - 1440px) / (1920 - 1440))) calc(76px + (102 - 76) * ((100vw - 1440px) / (1920 - 1440)));
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: calc(34px + (45 - 34) * ((100vw - 1440px) / (1920 - 1440)));
@@ -1783,7 +1870,7 @@ footer .right-block span {
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 17px 0;
+  padding: calc(12px + (17 - 12) * ((100vw - 1440px) / (1920 - 1440))) 0;
   border: 1px dashed #ffffff;
   background: transparent;
   border-radius: 100px;

@@ -485,6 +485,26 @@ document.addEventListener("DOMContentLoaded", function () {
     burgerMenu.classList.toggle("active");
   });
 
+  // Открытие и закрытие модального окна на баннере
+  let bannerBtn = document.querySelector(".banner-btn"),
+      bannerModal = document.querySelector(".banner-modal"),
+      bannerModalContent = document.querySelector(".banner-modal_content"),
+      bannerModalClose = document.querySelector(".banner-modal_close");
+
+  bannerBtn.addEventListener("click", function () {
+    bannerModal.classList.add("active");
+    bannerModalContent.classList.add("active");
+    bannerModalClose.classList.add("active");
+  });
+
+  bannerModalClose.addEventListener("click", function () {
+    setTimeout(function() {
+      bannerModal.classList.remove("active");
+    },800);
+    bannerModalContent.classList.remove("active");
+    bannerModalClose.classList.remove("active");
+  });
+
   // Открытие и закрытие формы на блоке с конкурсом
   let contestBtn = document.querySelector(".contest-btn"),
       contestModal = document.querySelector(".contest-modal"),
