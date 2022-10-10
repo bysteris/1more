@@ -126,33 +126,57 @@ document.addEventListener("DOMContentLoaded", function () {
         tlHero.from(heroItem, {
           yPercent: 100,
         });
-        tlHero.from(heroItem.querySelector(".circles-wrapper"), {
-          duration: 0.9,
-          transform: "rotateZ(45deg)",
-        },0.2);
-        tlHero.from(heroItem.querySelector(".section_img"), {
+        tlHero.from(
+          heroItem.querySelector(".circles-wrapper"),
+          {
+            duration: 0.9,
+            transform: "rotateZ(45deg)",
+          },
+          0.2
+        );
+        tlHero.from(
+          heroItem.querySelector(".section_img"),
+          {
             duration: 1,
             opacity: 0,
             x: -200,
-        },0.8);
-        tlHero.from(heroItem.querySelector(".section_title"), {
-          duration: 0.5,
-          opacity: 0,
-          x: -100,
-        },0.5);
-        tlHero.from(heroItem.querySelector(".section-description"), {
-          duration: 0.6,
-          opacity: 0,
-          x: -100,
-        },0.5);
-        tlHero.from(heroItem.querySelector(".section_mini-img"), {
-          duration: 0.7,
-          scale: 0,
-        },0.6);
-        tlHero.from(heroItem.querySelector(".gift"), {
-          duration: 1,
-          scale: 0,
-        },0.9);
+          },
+          0.8
+        );
+        tlHero.from(
+          heroItem.querySelector(".section_title"),
+          {
+            duration: 0.5,
+            opacity: 0,
+            x: -100,
+          },
+          0.5
+        );
+        tlHero.from(
+          heroItem.querySelector(".section-description"),
+          {
+            duration: 0.6,
+            opacity: 0,
+            x: -100,
+          },
+          0.5
+        );
+        tlHero.from(
+          heroItem.querySelector(".section_mini-img"),
+          {
+            duration: 0.7,
+            scale: 0,
+          },
+          0.6
+        );
+        tlHero.from(
+          heroItem.querySelector(".gift"),
+          {
+            duration: 1,
+            scale: 0,
+          },
+          0.9
+        );
       }
 
       tlHero.fromTo(
@@ -478,7 +502,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Открытие и закрытие меню
   let headerBurger = document.querySelector(".header-burger"),
-      burgerMenu = document.querySelector(".burger-menu");
+    burgerMenu = document.querySelector(".burger-menu");
 
   headerBurger.addEventListener("click", function () {
     this.classList.toggle("active");
@@ -487,9 +511,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Открытие и закрытие модального окна на баннере
   let bannerBtn = document.querySelector(".banner-btn"),
-      bannerModal = document.querySelector(".banner-modal"),
-      bannerModalContent = document.querySelector(".banner-modal_content"),
-      bannerModalClose = document.querySelector(".banner-modal_close");
+    bannerModal = document.querySelector(".banner-modal"),
+    bannerModalContent = document.querySelector(".banner-modal_content"),
+    bannerModalClose = document.querySelector(".banner-modal_close");
 
   bannerBtn.addEventListener("click", function () {
     bannerModal.classList.add("active");
@@ -498,18 +522,18 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   bannerModalClose.addEventListener("click", function () {
-    setTimeout(function() {
+    setTimeout(function () {
       bannerModal.classList.remove("active");
-    },800);
+    }, 800);
     bannerModalContent.classList.remove("active");
     bannerModalClose.classList.remove("active");
   });
 
   // Открытие и закрытие формы на блоке с конкурсом
   let contestBtn = document.querySelector(".contest-btn"),
-      contestModal = document.querySelector(".contest-modal"),
-      contestModalContent = document.querySelector(".contest-modal_content"),
-      contestModalClose = document.querySelector(".contest-modal_close");
+    contestModal = document.querySelector(".contest-modal"),
+    contestModalContent = document.querySelector(".contest-modal_content"),
+    contestModalClose = document.querySelector(".contest-modal_close");
 
   contestBtn.addEventListener("click", function () {
     contestModal.classList.add("active");
@@ -518,13 +542,12 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   contestModalClose.addEventListener("click", function () {
-    setTimeout(function() {
+    setTimeout(function () {
       contestModal.classList.remove("active");
-    },800);
+    }, 800);
     contestModalContent.classList.remove("active");
     contestModalClose.classList.remove("active");
   });
-
 
   // Открытие и закрытие модального окна у теста
   let testModal = document.querySelector(".test-modal"),
