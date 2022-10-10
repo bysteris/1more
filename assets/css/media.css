@@ -8,7 +8,8 @@
   }
 
   .header-wrapper {
-    padding: calc(14px + (20 - 14) * ((100vw - 1024px) / (1440 - 1024))) calc(27px + (36 - 27) * ((100vw - 1024px) / (1440 - 1024)));
+    padding: calc(14px + (20 - 14) * ((100vw - 1024px) / (1440 - 1024)))
+      calc(27px + (36 - 27) * ((100vw - 1024px) / (1440 - 1024)));
   }
 
   .header-tagline {
@@ -31,7 +32,7 @@
     height: calc(105px + (108 - 105) * ((100vw - 1024px) / (1440 - 1024)));
   }
 
-  .gift>span {
+  .gift > span {
     font-size: calc(12px + (14 - 12) * ((100vw - 1024px) / (1440 - 1024)));
   }
 
@@ -62,7 +63,7 @@
     max-width: calc(127px + (167 - 127) * ((100vw - 1024px) / (1440 - 1024)));
   }
 
-  .description-item>span {
+  .description-item > span {
     font-size: 10px;
   }
 
@@ -151,7 +152,8 @@
 
   .contest-btn {
     font-size: calc(16px + (14 - 16) * ((100vw - 1024px) / (1440 - 1024)));
-    padding: calc(12px + (17 - 12) * ((100vw - 1024px) / (1440 - 1024))) calc(22px + (23 - 22) * ((100vw - 1024px) / (1440 - 1024)));
+    padding: calc(12px + (17 - 12) * ((100vw - 1024px) / (1440 - 1024)))
+      calc(22px + (23 - 22) * ((100vw - 1024px) / (1440 - 1024)));
   }
 
   #overallBackground {
@@ -207,7 +209,8 @@
   .test-btn {
     font-size: calc(16px + (14 - 16) * ((100vw - 1024px) / (1440 - 1024)));
     margin-top: calc(34px + (44 - 34) * ((100vw - 1024px) / (1440 - 1024)));
-    padding: calc(12px + (17 - 12) * ((100vw - 1024px) / (1440 - 1024))) calc(23px + (26 - 23) * ((100vw - 1024px) / (1440 - 1024)));
+    padding: calc(12px + (17 - 12) * ((100vw - 1024px) / (1440 - 1024)))
+      calc(23px + (26 - 23) * ((100vw - 1024px) / (1440 - 1024)));
   }
 
   .buy-wrapper {
@@ -225,7 +228,9 @@
   .buy-items {
     grid-gap: calc(29px + (38 - 29) * ((100vw - 1024px) / (1440 - 1024)));
     margin-top: calc(82px + (98 - 82) * ((100vw - 1024px) / (1440 - 1024)));
-    margin-bottom: calc(152px + (85 - 152) * ((100vw - 1024px) / (1440 - 1024)));
+    margin-bottom: calc(
+      152px + (85 - 152) * ((100vw - 1024px) / (1440 - 1024))
+    );
   }
 
   .buy-item:nth-child(1),
@@ -246,7 +251,8 @@
   .buy-item_btn {
     width: 30%;
     font-size: calc(16px + (12 - 16) * ((100vw - 1024px) / (1440 - 1024)));
-    padding: calc(11px + (17 - 11) * ((100vw - 1024px) / (1440 - 1024))) calc(60px + (70 - 60) * ((100vw - 1024px) / (1440 - 1024)));
+    padding: calc(11px + (17 - 11) * ((100vw - 1024px) / (1440 - 1024)))
+      calc(60px + (70 - 60) * ((100vw - 1024px) / (1440 - 1024)));
     margin-top: calc(22px + (32 - 22) * ((100vw - 1024px) / (1440 - 1024)));
   }
 
@@ -261,7 +267,9 @@
   .contacts-container {
     padding: 0 calc(220px + (230 - 220) * ((100vw - 1024px) / (1440 - 1024)));
     margin-top: calc(130px + (142 - 130) * ((100vw - 1024px) / (1440 - 1024)));
-    margin-bottom: calc(131px + (147 - 131) * ((100vw - 1024px) / (1440 - 1024)));
+    margin-bottom: calc(
+      131px + (147 - 131) * ((100vw - 1024px) / (1440 - 1024))
+    );
     grid-column-gap: 122px;
   }
 
@@ -305,7 +313,7 @@
     font-size: calc(10px + (13 - 10) * ((100vw - 1024px) / (1440 - 1024)));
   }
 
-  .burger-menu_content .burger-menu_list>.burger-menu_list-item {
+  .burger-menu_content .burger-menu_list > .burger-menu_list-item {
     font-size: calc(48px + (64 - 48) * ((100vw - 1024px) / (1440 - 1024)));
     padding: 5px calc(100px + (150 - 100) * ((100vw - 1024px) / (1440 - 1024)));
   }
@@ -313,7 +321,8 @@
   .banner-modal_content {
     margin-right: calc(19px + (27 - 19) * ((100vw - 1024px) / (1440 - 1024)));
     width: calc(693px + (922 - 693) * ((100vw - 1024px) / (1440 - 1024)));
-    padding: calc(16px + (20 - 16) * ((100vw - 1024px) / (1440 - 1024))) calc(44px + (60 - 44) * ((100vw - 1024px) / (1440 - 1024)));
+    padding: calc(16px + (20 - 16) * ((100vw - 1024px) / (1440 - 1024)))
+      calc(44px + (60 - 44) * ((100vw - 1024px) / (1440 - 1024)));
   }
 
   .banner-modal_content.active {
@@ -336,10 +345,10 @@
   }
 
   .contest-modal_close {
-
     height: calc(35px + (47 - 35) * ((100vw - 1024px) / (1440 - 1024)));
     width: calc(35px + (47 - 35) * ((100vw - 1024px) / (1440 - 1024)));
-    margin: calc(14px + (19 - 14) * ((100vw - 1024px) / (1440 - 1024))) calc(28px + (37 - 28) * ((100vw - 1024px) / (1440 - 1024)));
+    margin: calc(14px + (19 - 14) * ((100vw - 1024px) / (1440 - 1024)))
+      calc(28px + (37 - 28) * ((100vw - 1024px) / (1440 - 1024)));
   }
 
   .contest-modal_content {
@@ -347,7 +356,8 @@
   }
 
   .contest-modal_wrapper {
-    padding: calc(198px + (238 - 198) * ((100vw - 1024px) / (1440 - 1024))) calc(102px + (120 - 102) * ((100vw - 1024px) / (1440 - 1024)));
+    padding: calc(198px + (238 - 198) * ((100vw - 1024px) / (1440 - 1024)))
+      calc(102px + (120 - 102) * ((100vw - 1024px) / (1440 - 1024)));
   }
 
   .contest-modal h3 {
@@ -358,7 +368,7 @@
     margin-bottom: calc(14px + (15 - 14) * ((100vw - 1024px) / (1440 - 1024)));
   }
 
-  [type="file"]+label.contest_btn-file {
+  [type="file"] + label.contest_btn-file {
     margin-bottom: calc(14px + (15 - 14) * ((100vw - 1024px) / (1440 - 1024)));
   }
 
@@ -380,7 +390,8 @@
   }
 
   .test-modal_body {
-    padding: calc(112px + (150 - 112) * ((100vw - 1024px) / (1440 - 1024))) calc(76px + (102 - 76) * ((100vw - 1024px) / (1440 - 1024)));
+    padding: calc(112px + (150 - 112) * ((100vw - 1024px) / (1440 - 1024)))
+      calc(76px + (102 - 76) * ((100vw - 1024px) / (1440 - 1024)));
     grid-gap: calc(34px + (45 - 34) * ((100vw - 1024px) / (1440 - 1024)));
   }
 
@@ -404,7 +415,8 @@
   }
 
   .header-wrapper {
-    padding: calc(11px + (14 - 11) * ((100vw - 768px) / (1024 - 768))) calc(14px + (27 - 14) * ((100vw - 1024px) / (1024 - 768)));
+    padding: calc(11px + (14 - 11) * ((100vw - 768px) / (1024 - 768)))
+      calc(14px + (27 - 14) * ((100vw - 1024px) / (1024 - 768)));
   }
 
   .header-tagline {
@@ -427,7 +439,7 @@
     height: calc(105px + (108 - 105) * ((100vw - 768px) / (1024 - 768)));
   }
 
-  .gift>span {
+  .gift > span {
     font-size: calc(12px + (14 - 12) * ((100vw - 768px) / (1024 - 768)));
   }
 
@@ -465,7 +477,7 @@
     max-width: calc(215px + (127 - 215) * ((100vw - 768px) / (1024 - 768)));
   }
 
-  .description-item>span {
+  .description-item > span {
     font-size: 13px;
   }
 
@@ -557,7 +569,8 @@
 
   .contest-btn {
     font-size: calc(13px + (14 - 13) * ((100vw - 768px) / (1024 - 768)));
-    padding: calc(12px + (17 - 12) * ((100vw - 768px) / (1024 - 768))) calc(19px + (22 - 19) * ((100vw - 768px) / (1024 - 768)));
+    padding: calc(12px + (17 - 12) * ((100vw - 768px) / (1024 - 768)))
+      calc(19px + (22 - 19) * ((100vw - 768px) / (1024 - 768)));
   }
 
   #overallBackground {
@@ -618,7 +631,8 @@
   .test-btn {
     font-size: calc(13px + (14 - 13) * ((100vw - 768px) / (1024 - 768)));
     margin-top: calc(44px + (34 - 44) * ((100vw - 768px) / (1024 - 768)));
-    padding: calc(8px + (12 - 8) * ((100vw - 768px) / (1024 - 768))) calc(17px + (23 - 17) * ((100vw - 768px) / (1024 - 768)));
+    padding: calc(8px + (12 - 8) * ((100vw - 768px) / (1024 - 768)))
+      calc(17px + (23 - 17) * ((100vw - 768px) / (1024 - 768)));
   }
 
   .buy-wrapper {
@@ -657,7 +671,8 @@
   .buy-item_btn {
     width: 30%;
     font-size: calc(13px + (16 - 13) * ((100vw - 768px) / (1024 - 768)));
-    padding: calc(7px + (11 - 7) * ((100vw - 768px) / (1024 - 768))) calc(50px + (60 - 50) * ((100vw - 768px) / (1024 - 768)));
+    padding: calc(7px + (11 - 7) * ((100vw - 768px) / (1024 - 768)))
+      calc(50px + (60 - 50) * ((100vw - 768px) / (1024 - 768)));
     margin-top: calc(16px + (22 - 16) * ((100vw - 768px) / (1024 - 768)));
   }
 
@@ -716,7 +731,7 @@
     font-size: 10px;
   }
 
-  .burger-menu_content .burger-menu_list>.burger-menu_list-item {
+  .burger-menu_content .burger-menu_list > .burger-menu_list-item {
     font-size: calc(64px + (48 - 64) * ((100vw - 768px) / (1024 - 768)));
     padding: 5px calc(100px + (150 - 100) * ((100vw - 768px) / (1024 - 768)));
   }
@@ -724,7 +739,8 @@
   .banner-modal_content {
     margin-right: calc(14px + (19 - 14) * ((100vw - 768px) / (1024 - 768)));
     width: calc(693px + (922 - 693) * ((100vw - 768px) / (1024 - 768)));
-    padding: calc(16px + (20 - 16) * ((100vw - 768px) / (1024 - 768))) calc(44px + (60 - 44) * ((100vw - 768px) / (1024 - 768)));
+    padding: calc(16px + (20 - 16) * ((100vw - 768px) / (1024 - 768)))
+      calc(44px + (60 - 44) * ((100vw - 768px) / (1024 - 768)));
   }
 
   .banner-modal_content.active {
@@ -749,7 +765,8 @@
   .contest-modal_close {
     height: calc(51px + (35 - 51) * ((100vw - 768px) / (1024 - 768)));
     width: calc(51px + (35 - 51) * ((100vw - 768px) / (1024 - 768)));
-    margin: calc(20px + (14 - 20) * ((100vw - 768px) / (1024 - 768))) calc(42px + (28 - 42) * ((100vw - 768px) / (1024 - 768)));
+    margin: calc(20px + (14 - 20) * ((100vw - 768px) / (1024 - 768)))
+      calc(42px + (28 - 42) * ((100vw - 768px) / (1024 - 768)));
   }
 
   .contest-modal_content {
@@ -757,7 +774,8 @@
   }
 
   .contest-modal_wrapper {
-    padding: calc(259px + (198 - 259) * ((100vw - 768px) / (1024 - 768))) calc(132px + (102 - 132) * ((100vw - 768px) / (1024 - 768)));
+    padding: calc(259px + (198 - 259) * ((100vw - 768px) / (1024 - 768)))
+      calc(132px + (102 - 132) * ((100vw - 768px) / (1024 - 768)));
   }
 
   .contest-modal h3 {
@@ -768,7 +786,7 @@
     margin-bottom: calc(14px + (15 - 14) * ((100vw - 768px) / (1024 - 768)));
   }
 
-  [type="file"]+label.contest_btn-file {
+  [type="file"] + label.contest_btn-file {
     margin-bottom: calc(14px + (15 - 14) * ((100vw - 768px) / (1024 - 768)));
   }
 
@@ -791,7 +809,8 @@
 
   .test-modal_body {
     grid-template-columns: repeat(1, 1fr);
-    padding: calc(75px + (112 - 75) * ((100vw - 768px) / (1024 - 768))) calc(160px + (76 - 160) * ((100vw - 768px) / (1024 - 768)));
+    padding: calc(75px + (112 - 75) * ((100vw - 768px) / (1024 - 768)))
+      calc(160px + (76 - 160) * ((100vw - 768px) / (1024 - 768)));
     grid-gap: calc(25px + (34 - 25) * ((100vw - 768px) / (1024 - 768)));
   }
 
@@ -816,7 +835,8 @@
   }
 
   .header-wrapper {
-    padding: calc(10px + (11 - 10) * ((100vw - 375px) / (768 - 375))) calc(14px + (24 - 14) * ((100vw - 375px) / (768 - 375)));
+    padding: calc(10px + (11 - 10) * ((100vw - 375px) / (768 - 375)))
+      calc(14px + (24 - 14) * ((100vw - 375px) / (768 - 375)));
   }
 
   .header-tagline {
@@ -870,7 +890,7 @@
     max-width: calc(128px + (215 - 128) * ((100vw - 375px) / (768 - 375)));
   }
 
-  .description-item>span {
+  .description-item > span {
     font-size: 9px;
   }
 
@@ -1011,7 +1031,8 @@
 
   .contest-btn {
     font-size: calc(11px + (13 - 11) * ((100vw - 375px) / (768 - 375)));
-    padding: calc(12px + (17 - 12) * ((100vw - 375px) / (768 - 375))) calc(15px + (19 - 15) * ((100vw - 375px) / (768 - 375)));
+    padding: calc(12px + (17 - 12) * ((100vw - 375px) / (768 - 375)))
+      calc(15px + (19 - 15) * ((100vw - 375px) / (768 - 375)));
   }
 
   #overallBackground {
@@ -1074,7 +1095,8 @@
   .test-btn {
     font-size: calc(11px + (13 - 11) * ((100vw - 375px) / (768 - 375)));
     margin-top: calc(36px + (44 - 36) * ((100vw - 375px) / (768 - 375)));
-    padding: calc(17px + (8 - 17) * ((100vw - 375px) / (768 - 375))) calc(25px + (17 - 25) * ((100vw - 375px) / (768 - 375)));
+    padding: calc(17px + (8 - 17) * ((100vw - 375px) / (768 - 375)))
+      calc(25px + (17 - 25) * ((100vw - 375px) / (768 - 375)));
   }
 
   .buy-wrapper {
@@ -1114,7 +1136,8 @@
   .buy-item_btn {
     width: 30%;
     font-size: calc(11px + (13 - 11) * ((100vw - 375px) / (768 - 375)));
-    padding: calc(11px + (7 - 11) * ((100vw - 375px) / (768 - 375))) calc(24px + (50 - 24) * ((100vw - 375px) / (768 - 375)));
+    padding: calc(11px + (7 - 11) * ((100vw - 375px) / (768 - 375)))
+      calc(24px + (50 - 24) * ((100vw - 375px) / (768 - 375)));
     margin-top: calc(32px + (16 - 32) * ((100vw - 375px) / (768 - 375)));
   }
 
@@ -1160,10 +1183,25 @@
   }
 
   footer {
-    display: none;
+    padding: 0 calc(14px + (20 -14) * ((100vw - 375px) / (768 - 375)));
+    padding-bottom: calc(10px + (15 - 10) * ((100vw - 375px) / (768 - 375)));
   }
 
-  .burger-menu_content .burger-menu_list>.burger-menu_list-item {
+  footer.active {
+    z-index: 99;
+  }
+
+  footer .left-block span {
+    font-size: 10px;
+  }
+
+  footer .right-block span {
+    width: calc(40px + (32 - 40) * ((100vw - 375px) / (768 - 375)));
+    height: calc(40px + (32 - 40) * ((100vw - 375px) / (768 - 375)));
+    font-size: 11px;
+  }
+
+  .burger-menu_content .burger-menu_list > .burger-menu_list-item {
     font-size: calc(28px + (48 - 28) * ((100vw - 375px) / (768 - 375)));
     padding: 5px calc(60px + (100 - 60) * ((100vw - 375px) / (768 - 375)));
   }
@@ -1171,7 +1209,8 @@
   .banner-modal_content {
     margin-right: 0;
     width: 100%;
-    padding: calc(9px + (16 - 9) * ((100vw - 375px) / (768 - 375))) calc(8px + (44 - 8) * ((100vw - 375px) / (768 - 375)));
+    padding: calc(9px + (16 - 9) * ((100vw - 375px) / (768 - 375)))
+      calc(8px + (44 - 8) * ((100vw - 375px) / (768 - 375)));
     border-radius: 20px 20px 0px 0px;
   }
 
@@ -1203,16 +1242,18 @@
   .contest-modal_close {
     height: calc(40px + (51 - 40) * ((100vw - 375px) / (768 - 375)));
     width: calc(40px + (51 - 40) * ((100vw - 375px) / (768 - 375)));
-    margin: calc(9px + (20 - 9) * ((100vw - 375px) / (768 - 375))) calc(18px + (42 - 18) * ((100vw - 375px) / (768 - 375)));
+    margin: calc(9px + (20 - 9) * ((100vw - 375px) / (768 - 375)))
+      calc(18px + (42 - 18) * ((100vw - 375px) / (768 - 375)));
   }
 
   .contest-modal_content {
     width: 100%;
     border-radius: 28px 0px 0px 28px;
-}
+  }
 
   .contest-modal_wrapper {
-    padding: calc(149px + (132 - 149) * ((100vw - 375px) / (768 - 375))) calc(18px + (259 - 18) * ((100vw - 375px) / (768 - 375)));
+    padding: calc(149px + (132 - 149) * ((100vw - 375px) / (768 - 375)))
+      calc(18px + (259 - 18) * ((100vw - 375px) / (768 - 375)));
   }
 
   .contest-modal h3 {
@@ -1223,7 +1264,7 @@
     margin-bottom: calc(14px + (15 - 14) * ((100vw - 375px) / (768 - 375)));
   }
 
-  [type="file"]+label.contest_btn-file {
+  [type="file"] + label.contest_btn-file {
     margin-bottom: calc(14px + (15 - 14) * ((100vw - 375px) / (768 - 375)));
   }
 
@@ -1254,7 +1295,8 @@
 
   .test-modal_body {
     grid-template-columns: repeat(1, 1fr);
-    padding: calc(58px + (160 - 58) * ((100vw - 375px) / (768 - 375))) calc(45px + (75 - 45) * ((100vw - 375px) / (768 - 375)));
+    padding: calc(58px + (160 - 58) * ((100vw - 375px) / (768 - 375)))
+      calc(45px + (75 - 45) * ((100vw - 375px) / (768 - 375)));
     grid-gap: calc(15px + (25 - 15) * ((100vw - 375px) / (768 - 375)));
   }
 

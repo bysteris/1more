@@ -503,10 +503,12 @@ document.addEventListener("DOMContentLoaded", function () {
   // Открытие и закрытие меню
   let headerBurger = document.querySelector(".header-burger"),
     burgerMenu = document.querySelector(".burger-menu");
+    footer = document.querySelector("footer");
 
   headerBurger.addEventListener("click", function () {
     this.classList.toggle("active");
     burgerMenu.classList.toggle("active");
+    footer.classList.toggle("active");
   });
 
   // Открытие и закрытие модального окна на баннере
