@@ -181,6 +181,7 @@
 
   .participants-more {
     margin-top: calc(45px + (64 - 45) * ((100vw - 1024px) / (1440 - 1024)));
+    margin-bottom: calc(49px + (82 - 49) * ((100vw - 375px) / (768 - 375)));
   }
 
   .test-container {
@@ -599,6 +600,7 @@
 
   .participants-more {
     margin-top: calc(55px + (64 - 55) * ((100vw - 768px) / (1024 - 768)));
+    margin-bottom: calc(64px + (49 - 64) * ((100vw - 375px) / (768 - 375)));
   }
 
   .page-test {
@@ -855,6 +857,7 @@
 
   .circles-wrapper {
     padding: 0 0;
+    scale: 1.5;
   }
 
   .gift {
@@ -1062,11 +1065,13 @@
 
   .participants-more {
     margin-top: calc(55px + (64 - 55) * ((100vw - 375px) / (768 - 375)));
+    margin-bottom: calc(44px + (64 - 44) * ((100vw - 375px) / (768 - 375)));
   }
 
   .page-test {
-    background-size: cover;
-    background-position: unset;
+    background-size: auto;
+    background-position-x: 70%;
+    background-position-y: center;
   }
 
   .test-container {
@@ -1076,6 +1081,8 @@
   .test-container span {
     margin-top: calc(134px + (296 - 134) * ((100vw - 375px) / (768 - 375)));
     font-size: calc(14px + (16 - 14) * ((100vw - 375px) / (768 - 375)));
+    padding: 0 calc(54px + (74 - 54) * ((100vw - 375px) / (768 - 375)));
+    text-align: center;
   }
 
   .test-decription {

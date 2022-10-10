@@ -215,7 +215,7 @@ document.addEventListener("DOMContentLoaded", function () {
       trigger: ".banner-radius",
       start: "50% 100%",
       end: "100% 100%",
-      scrub: 0.5,
+      scrub: 1,
       //markers: true,
     },
     scale: 1,
@@ -506,7 +506,7 @@ document.addEventListener("DOMContentLoaded", function () {
     footer = document.querySelector("footer");
 
   headerBurger.addEventListener("click", function () {
-    this.classList.toggle("active");
+    this.classList.toggle("active");    
     burgerMenu.classList.toggle("active");
     footer.classList.toggle("active");
   });
