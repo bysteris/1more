@@ -213,7 +213,7 @@ document.addEventListener("DOMContentLoaded", function () {
   let radius = gsap.to(".banner-radius", {
     scrollTrigger: {
       trigger: ".banner-radius",
-      start: "50% 100%",
+      start: "20% 100%",
       end: "100% 100%",
       scrub: 1,
       //markers: true,
