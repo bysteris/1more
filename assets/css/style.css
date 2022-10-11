@@ -576,7 +576,11 @@ body,
   .ag-timeline-card_desc {
   opacity: 1;
   transform: translateX(0) scale(1);
-  transition: all 0.8s;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -o-transition: all 0.5s;
 }
 
 .ag-timeline-card_img {

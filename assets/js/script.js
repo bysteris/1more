@@ -88,7 +88,7 @@ document.addEventListener("DOMContentLoaded", function () {
         i = agTop + agPosY - $(window).scrollTop();
         a =
           agTimelineLineProgress.offset().top + agPosY - $(window).scrollTop();
-        n = agPosY - a + agOuterHeight / 2;
+        n = agPosY - a + agOuterHeight / 1.2;
         i <= agPosY + agOuterHeight / 2 && (n = i - a);
         agTimelineLineProgress.css({
           height: n + "px",
@@ -97,7 +97,7 @@ document.addEventListener("DOMContentLoaded", function () {
         agTimelineItem.each(function () {
           var agTop = $(this).find(agTimelinePoint).offset().top;
 
-          agTop + agPosY - $(window).scrollTop() < agPosY + 0.5 * agOuterHeight
+          agTop + agPosY - $(window).scrollTop() < agPosY + 0.85 * agOuterHeight
             ? $(this).addClass("js-ag-active")
             : $(this).removeClass("js-ag-active");
         });
