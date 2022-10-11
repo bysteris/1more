@@ -6,7 +6,8 @@
 }
 
 body {
-  background: url(/assets/image/noise-background.png) #1e1e1e;
+  /* background: url(/assets/image/noise-background.png) #1e1e1e; */
+  background: #1e1e1e;
   font-family: "Inter", sans-serif;
   color: #ffffff;
   font-size: calc(13px + (18 - 13) * ((100vw - 1440px) / (1920 - 1440)));
@@ -1900,6 +1901,11 @@ footer .right-block span {
   cursor: pointer;
   transform: rotate(0deg);
   transition: all 0.4s;
+}
+
+.test-modal_close:hover::before,
+.test-modal_close:hover::after {
+  background-color: #ffffffa6;
 }
 
 .test-modal_close::before,

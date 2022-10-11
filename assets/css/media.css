@@ -995,7 +995,7 @@
   }
 
   .page-contest {
-    padding-top: 15vh;
+    /* padding-top: 15vh; */
   }
 
   .contest-wrapper {
@@ -1010,14 +1010,17 @@
 
   .contest-wave {
     top: 35vh;
+    scale: 2;
   }
 
   .contest-left-headphone {
-    margin-top: 10vh;
+    margin-top: 25vh;
+    scale: 2;
   }
 
   .contest-right-headphone {
-    margin-top: -10vh;
+    margin-top: 0vh;
+    scale: 2;
   }
 
   .contest-description span {

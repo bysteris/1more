@@ -123,68 +123,41 @@ document.addEventListener("DOMContentLoaded", function () {
       const tlHero = gsap.timeline();
 
       if (!isFirst) {
-        tlHero.from(heroItem, {
-          yPercent: 100,
-        });
-        tlHero.from(
-          heroItem.querySelector(".circles-wrapper"),
-          {
-            duration: 0.9,
-            transform: "rotateZ(45deg)",
-          },
-          0.2
-        );
-        tlHero.from(
-          heroItem.querySelector(".section_img"),
-          {
-            duration: 1,
-            opacity: 0,
-            x: -200,
-          },
-          0.8
-        );
-        tlHero.from(
-          heroItem.querySelector(".section_title"),
-          {
-            duration: 0.5,
-            opacity: 0,
-            x: -100,
-          },
-          0.5
-        );
-        tlHero.from(
-          heroItem.querySelector(".section-description"),
-          {
-            duration: 0.6,
-            opacity: 0,
-            x: -100,
-          },
-          0.5
-        );
-        tlHero.from(
-          heroItem.querySelector(".section_mini-img"),
-          {
-            duration: 0.7,
-            scale: 0,
-          },
-          0.6
-        );
-        tlHero.from(
-          heroItem.querySelector(".gift"),
-          {
-            duration: 1,
-            scale: 0,
-          },
-          0.9
-        );
+        tlHero.from(heroItem, { yPercent: 100,});
+        tlHero.from(heroItem.querySelector(".circles-wrapper"), {
+          duration: 0.1,
+          transform: "rotateZ(45deg)",
+        },0.2);
+        tlHero.from(heroItem.querySelector(".section_img"), {
+          duration: 1,
+          opacity: 0,
+          x: -200,
+        },0.8);
+        tlHero.from(heroItem.querySelector(".section_title"), {
+          duration: 0.5,
+          opacity: 0,
+          x: -100,
+        },0.5);
+        tlHero.from(heroItem.querySelector(".section-description"), {
+          duration: 0.6,
+          opacity: 0,
+          x: -100,
+        },0.5);
+        tlHero.from(heroItem.querySelector(".section_mini-img"), {
+          duration: 0.7,
+          scale: 0,
+        },0.6);
+        tlHero.from(heroItem.querySelector(".gift"), {
+          duration: 1,
+          scale: 0,
+        },0.9);
       }
 
-      tlHero.fromTo(
-        heroItem.querySelector(".hero_bg-img"),
-        { yPercent: isFirst ? 0 : 1 },
-        { yPercent: -1 },
-        0
-      );
+      // tlHero.fromTo(heroItem.querySelector(".hero_bg-img"), { 
+      //   yPercent: isFirst ? 0 : 0 
+      // }, { 
+      //   yPercent: -1 
+      // },0);
 
       return tlHero;
     }
@@ -193,7 +166,7 @@ document.addEventListener("DOMContentLoaded", function () {
       if (i === 0) {
         heroItemsTL.add(slideTL(heroItem, true));
       } else {
-        heroItemsTL.add(slideTL(heroItem), "+=1");
+        heroItemsTL.add(slideTL(heroItem), "+=0.1");
       }
     });
 
@@ -221,7 +194,7 @@ document.addEventListener("DOMContentLoaded", function () {
     scale: 1,
     borderTopLeftRadius: 0,
     borderTopRightRadius: 0,
-    duration: 2,
+    duration: 0.1,
   });
 
   gsap.from(".banner-title", {
@@ -259,124 +232,78 @@ document.addEventListener("DOMContentLoaded", function () {
     xPercent: -100 * (sections.length - 1),
     ease: "SlowMo",
     scrollTrigger: {
-      trigger: ".banner-wrapper",
-      pin: true,
+      trigger: ".page-banner",
+      pin: ".page-banner",
       anticipatePin: 1,
-      scrub: 1.5,
+      scrub: 1,
+      //pinSpacing: false,
       snap: 1 / (sections.length - 1),
+      end: () => "+=" + document.querySelector(".page-banner").offsetWidth,
+      //markers: true,
     },
   });
 
   // Headphones left and right to center
-  gsap
-    .timeline({
+  gsap.timeline({
       scrollTrigger: {
         trigger: ".page-contest",
         start: "0% 100%",
         end: "bottom bottom",
         scrub: 1,
+        // pin: true,
         //markers: true,
       },
       ease: "SlowMo",
     })
-    .to(
-      ".contest-wave",
-      {
-        yPercent: 20,
-        scale: 1,
-        ease: "SlowMo",
-      },
-      0
-    )
-    .to(
-      ".contest-left-headphone",
-      {
-        marginLeft: 0,
-      },
-      0
-    )
-    .to(
-      ".contest-right-headphone",
-      {
-        marginRight: 0,
-      },
-      0
-    )
-    .to(
-      ".contest-container",
-      {
-        yPercent: 20,
-        ease: "SlowMo",
-      },
-      0
-    )
-    .to(
-      ".contest-description h1",
-      {
-        yPercent: 80,
-        opacity: 1,
-        ease: "SlowMo",
-      },
-      0
-    )
-    .to(
-      ".contest-description span",
-      {
-        yPercent: 300,
-        opacity: 1,
-        ease: "SlowMo",
-      },
-      0
-    )
-    .to(
-      ".contest-btn",
-      {
-        yPercent: -600,
-        opacity: 1,
-        ease: "SlowMo",
-        transition: "translate 0.5s",
-      },
-      0
-    );
+    .to(".contest-wave",{ yPercent: 20, scale: 1, ease: "SlowMo" }, 0)
+    .to(".contest-left-headphone",{ marginLeft: 0 }, 0)
+    .to(".contest-right-headphone",{ marginRight: 0 }, 0)
+    .to(".contest-container",{ yPercent: 20,ease: "SlowMo" }, 0)
+    .to(".contest-description h1",{ yPercent: 80, opacity: 1, ease: "SlowMo" }, 0)
+    .to(".contest-description span",{ yPercent: 300, opacity: 1, ease: "SlowMo" }, 0)
+    .to(".contest-btn", { yPercent: -600, opacity: 1, ease: "SlowMo", transition: "translate 0.5s" }, 0);
 
   // Animation for title Page Buy
   gsap.from(".buy-title h1:nth-child(1)", {
     scrollTrigger: {
-      trigger: ".page-buy",
+      trigger: ".buy-title",
       start: "0% 100%",
       end: "bottom bottom",
       scrub: 1,
       //markers: true
     },
-    xPercent: -20,
+    xPercent: -60,
     opacity: 0,
     ease: "SlowMo",
+    transition: "all 0.2s",
   });
 
   gsap.from(".buy-title h1:nth-child(2)", {
     scrollTrigger: {
-      trigger: ".page-buy",
+      trigger: ".buy-title",
       start: "0% 100%",
       end: "bottom bottom",
       scrub: 1,
       //markers: true
     },
-    xPercent: -30,
+    xPercent: -100,
     opacity: 0,
     ease: "SlowMo",
+    transition: "all 0.2s",
   });
 
   gsap.from(".buy-title h1:nth-child(3)", {
     scrollTrigger: {
-      trigger: ".page-buy",
+      trigger: ".buy-title",
       start: "0% 100%",
       end: "bottom bottom",
       scrub: 1,
       //markers: true
     },
-    xPercent: -40,
+    xPercent: -140,
     opacity: 0,
     ease: "SlowMo",
+    transition: "all 0.2s",
   });
 
   //Animation block for Page Buy
@@ -493,29 +420,29 @@ document.addEventListener("DOMContentLoaded", function () {
   ScrollTrigger.create({
     animation: slidesTL,
     trigger: ".slide-container",
-    start: "top top",
     end: `+=${slides.length * 100}%`,
     scrub: 1,
     pin: true,
     anticipatePin: 1,
+    //markers: true,
   });
 
   // Открытие и закрытие меню
   let headerBurger = document.querySelector(".header-burger"),
-    burgerMenu = document.querySelector(".burger-menu");
-    footer = document.querySelector("footer");
+      burgerMenu = document.querySelector(".burger-menu");
+      footer = document.querySelector("footer");
 
   headerBurger.addEventListener("click", function () {
-    this.classList.toggle("active");    
+    this.classList.toggle("active");
     burgerMenu.classList.toggle("active");
     footer.classList.toggle("active");
   });
 
   // Открытие и закрытие модального окна на баннере
   let bannerBtn = document.querySelector(".banner-btn"),
-    bannerModal = document.querySelector(".banner-modal"),
-    bannerModalContent = document.querySelector(".banner-modal_content"),
-    bannerModalClose = document.querySelector(".banner-modal_close");
+      bannerModal = document.querySelector(".banner-modal"),
+      bannerModalContent = document.querySelector(".banner-modal_content"),
+      bannerModalClose = document.querySelector(".banner-modal_close");
 
   bannerBtn.addEventListener("click", function () {
     bannerModal.classList.add("active");
@@ -526,16 +453,16 @@ document.addEventListener("DOMContentLoaded", function () {
   bannerModalClose.addEventListener("click", function () {
     setTimeout(function () {
       bannerModal.classList.remove("active");
-    }, 800);
+    }, 1200);
     bannerModalContent.classList.remove("active");
     bannerModalClose.classList.remove("active");
   });
 
   // Открытие и закрытие формы на блоке с конкурсом
   let contestBtn = document.querySelector(".contest-btn"),
-    contestModal = document.querySelector(".contest-modal"),
-    contestModalContent = document.querySelector(".contest-modal_content"),
-    contestModalClose = document.querySelector(".contest-modal_close");
+      contestModal = document.querySelector(".contest-modal"),
+      contestModalContent = document.querySelector(".contest-modal_content"),
+      contestModalClose = document.querySelector(".contest-modal_close");
 
   contestBtn.addEventListener("click", function () {
     contestModal.classList.add("active");
