@@ -497,4 +497,20 @@ document.addEventListener("DOMContentLoaded", function () {
     setTimeout(function () {}, 3000);
   };
   $(".sound-wave .bar").addClass("bar2");
+
+  // Конец страницы
+  let $footerBorder = $("footer"),
+      $footerCenter = $("footer .center-block");
+
+  $(window).scroll(function() {
+    if  ($(window).scrollTop() == $(document).height() - $(window).height()) {
+      $footerBorder.css({ 'border-top':'0.75px solid rgba(255, 255, 255, 0.28)' });
+      $footerCenter.css({ 'opacity': '1', 'transition': 'opacity 0.4s' });
+    }
+    else {
+      $footerBorder.css({ 'border-top':'' });
+      $footerCenter.css({ 'opacity':'', 'transition': 'opacity 0.2s' });
+    }
+  });
+
 });

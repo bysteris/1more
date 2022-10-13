@@ -5,6 +5,31 @@
   src: url(/assets/fonts/HalvarBreitschriftDEMO-Bold.otf);
 }
 
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.60);
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(255, 255, 255); 
+}
+
 body {
   /* background: url(/assets/image/noise-background.png) #1e1e1e; */
   background: #1e1e1e;
@@ -13,7 +38,7 @@ body {
   font-size: calc(13px + (18 - 13) * ((100vw - 1440px) / (1920 - 1440)));
   font-weight: 400;
   line-height: 1.2;
-  overflow-x: hidden;
+  overflow: overlay;
 }
 
 h1 {
@@ -731,7 +756,8 @@ body,
   margin-top: 28px;
   background: #cb884a;
   border: 2px solid #f0a560;
-  box-shadow: 0px 0px 35.25px 3.75px #cb884a,    inset 0px 0px 3.75px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 0px 35.25px 3.75px #cb884a,
+    inset 0px 0px 3.75px rgba(0, 0, 0, 0.25);
   border-radius: 50%;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
@@ -1247,25 +1273,24 @@ body,
   background: url(/assets/image/noise-background.png) #fe3b1f;
 }
 
-.contacts-wrapper hr {
-  height: 1px;
-  border: 0;
-  background-color: rgba(255, 255, 255, 0.28);
-  position: absolute;
-  bottom: calc(60px + (70 - 60) * ((100vw - 1440px) / (1920 - 1440)));
-  width: 100%;
-}
-
 .contacts-wrapper {
 }
 
 .contacts-logo {
   width: 100%;
   padding-top: calc(72px + (96 - 72) * ((100vw - 1440px) / (1920 - 1440)));
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .contacts-logo img {
   width: 100%;
+}
+
+.contacts-logo_elem {
+  display: inline-block;
+  padding-left: 10%;
+  animation: scroll 9s infinite linear;
 }
 
 .contacts-container {
@@ -1341,8 +1366,8 @@ footer {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 calc(27px + (35 - 27) * ((100vw - 1440px) / (1920 - 1440)));
-  padding-bottom: calc(13px + (19 - 13) * ((100vw - 1440px) / (1920 - 1440)));
+  padding: calc(13px + (19 - 13) * ((100vw - 1440px) / (1920 - 1440))) calc(27px + (35 - 27) * ((100vw - 1440px) / (1920 - 1440)));
+  /* border-top: 0.75px solid rgba(255, 255, 255, 0.28); */
   width: 100vw;
   z-index: 10;
 }
@@ -1355,6 +1380,14 @@ footer .left-block {
 footer .left-block span {
   font-size: calc(8px + (10 - 8) * ((100vw - 1440px) / (1920 - 1440)));
   font-weight: 500;
+}
+
+footer .center-block {
+  opacity: 0;
+}
+
+footer .center-block span a {
+  text-decoration: underline;
 }
 
 footer .right-block span {
@@ -2139,4 +2172,14 @@ footer .right-block span {
 .bar:nth-child(7) {
   height: 35px;
   animation-duration: 441ms;
+}
+
+/* Анимация прокрутки логотипа в контактах */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
 }

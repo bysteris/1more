@@ -257,10 +257,6 @@
     margin-top: calc(22px + (32 - 22) * ((100vw - 1024px) / (1440 - 1024)));
   }
 
-  .contacts-wrapper hr {
-    bottom: calc(52px + (60 - 52) * ((100vw - 1024px) / (1440 - 1024)));
-  }
-
   .contacts-logo {
     padding-top: calc(95px + (96 - 95) * ((100vw - 1024px) / (1440 - 1024)));
   }
@@ -300,7 +296,7 @@
   }
 
   footer {
-    padding: 0 calc(20px + (27 - 20) * ((100vw - 1024px) / (1440 - 1024)));
+    padding: calc(10px + (13 - 10) * ((100vw - 1024px) / (1440 - 1024))) calc(20px + (27 - 20) * ((100vw - 1024px) / (1440 - 1024)));
     padding-bottom: calc(10px + (13 - 10) * ((100vw - 1024px) / (1440 - 1024)));
   }
 
@@ -678,10 +674,6 @@
     margin-top: calc(16px + (22 - 16) * ((100vw - 768px) / (1024 - 768)));
   }
 
-  .contacts-wrapper hr {
-    bottom: calc(52px + (60 - 52) * ((100vw - 768px) / (1024 - 768)));
-  }
-
   .contacts-logo {
     padding-top: calc(195px + (196 - 195) * ((100vw - 768px) / (1024 - 768)));
   }
@@ -719,8 +711,7 @@
   }
 
   footer {
-    padding: 0 calc(14px + (20 -14) * ((100vw - 768px) / (1024 - 768)));
-    padding-bottom: calc(15px + (10 - 15) * ((100vw - 768px) / (1024 - 768)));
+    padding: calc(15px + (10 - 15) * ((100vw - 768px) / (1024 - 768))) calc(14px + (20 -14) * ((100vw - 768px) / (1024 - 768)));
   }
 
   footer .left-block span {
@@ -1151,10 +1142,6 @@
     margin-top: calc(32px + (16 - 32) * ((100vw - 426px) / (768 - 426)));
   }
 
-  .contacts-wrapper hr {
-    bottom: calc(48px + (52 - 48) * ((100vw - 426px) / (768 - 426)));
-  }
-
   .contacts-logo {
     padding-top: calc(80px + (195 - 80) * ((100vw - 426px) / (768 - 426)));
   }
@@ -1193,8 +1180,7 @@
   }
 
   footer {
-    padding: 0 calc(14px + (20 -14) * ((100vw - 426px) / (768 - 426)));
-    padding-bottom: calc(10px + (15 - 10) * ((100vw - 426px) / (768 - 426)));
+    padding: calc(10px + (15 - 10) * ((100vw - 426px) / (768 - 426))) calc(14px + (20 -14) * ((100vw - 426px) / (768 - 426)));
   }
 
   footer.active {
@@ -1654,10 +1640,6 @@
     margin-top: calc(32px + (16 - 32) * ((100vw - 375px) / (425 - 375)));
   }
 
-  .contacts-wrapper hr {
-    bottom: calc(48px + (52 - 48) * ((100vw - 375px) / (425 - 375)));
-  }
-
   .contacts-logo {
     padding-top: calc(80px + (195 - 80) * ((100vw - 375px) / (425 - 375)));
   }
@@ -1696,8 +1678,7 @@
   }
 
   footer {
-    padding: 0 calc(14px + (20 -14) * ((100vw - 375px) / (425 - 375)));
-    padding-bottom: calc(10px + (15 - 10) * ((100vw - 375px) / (425 - 375)));
+    padding: calc(10px + (15 - 10) * ((100vw - 375px) / (425 - 375))) calc(14px + (20 -14) * ((100vw - 375px) / (425 - 375)));
   }
 
   footer.active {
