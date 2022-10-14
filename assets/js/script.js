@@ -1,4 +1,5 @@
-document.addEventListener("DOMContentLoaded", function () {
+// document.addEventListener("DOMContentLoaded", function () {
+  $(window).on('load', function() {
   // Плавная прокрутка по якорям
   $("a[href*='#']").on("click", function (e) {
     var anchor = $(this);
@@ -435,7 +436,8 @@ document.addEventListener("DOMContentLoaded", function () {
   headerBurger.addEventListener("click", function () {
     this.classList.toggle("active");
     burgerMenu.classList.toggle("active");
-    footer.classList.toggle("active");
+    // footer.classList.toggle("active");
+    document.body.classList.toggle("active");
   });
 
   // Открытие и закрытие модального окна на баннере
