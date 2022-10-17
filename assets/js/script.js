@@ -12,7 +12,7 @@
             scrollTop: $(anchor.attr("href")).offset().top,
           },
           {
-            duration: 900,
+            duration: 700,
             easing: "swing",
           }
         );
@@ -261,7 +261,7 @@
     .to(".contest-right-headphone",{ marginRight: 0 }, 0)
     .to(".contest-container",{ yPercent: 20,ease: "SlowMo" }, 0)
     .to(".contest-description h1",{ yPercent: 80, opacity: 1, ease: "SlowMo" }, 0)
-    .to(".contest-description span",{ yPercent: 300, opacity: 1, ease: "SlowMo" }, 0)
+    .to(".contest-description span",{ yPercent: 200, opacity: 1, ease: "SlowMo" }, 0)
     .to(".contest-btn", { yPercent: -600, opacity: 1, ease: "SlowMo", transition: "translate 0.5s" }, 0);
 
   // Animation for title Page Buy
@@ -430,14 +430,36 @@
 
   // Открытие и закрытие меню
   let headerBurger = document.querySelector(".header-burger"),
-      burgerMenu = document.querySelector(".burger-menu");
-      footer = document.querySelector("footer");
+      burgerMenu = document.querySelector(".burger-menu"),
+      footer = document.querySelector("footer"),
+      burgerMenuItems = document.querySelectorAll(".burger-menu_list-item");
 
   headerBurger.addEventListener("click", function () {
     this.classList.toggle("active");
     burgerMenu.classList.toggle("active");
-    // footer.classList.toggle("active");
+    footer.classList.toggle("active"),
     document.body.classList.toggle("active");
+    
+
+    if (this.classList.contains("active")) {
+      document.querySelector(".center-block").style.opacity = 0;
+    }
+    else {
+      document.querySelector(".center-block").style.opacity = 1;
+    }   
+
+  });
+
+  burgerMenuItems.forEach(burgerMenuItem => {
+    burgerMenuItem.addEventListener("click", function () {
+      setTimeout(function () {
+        headerBurger.classList.remove("active");
+        burgerMenu.classList.remove("active");
+        footer.classList.remove("active");
+        document.body.classList.remove("active");
+        document.querySelector(".center-block").style.opacity = 1;
+      }, 600);
+    });
   });
 
   // Открытие и закрытие модального окна на баннере
@@ -475,7 +497,7 @@
   contestModalClose.addEventListener("click", function () {
     setTimeout(function () {
       contestModal.classList.remove("active");
-    }, 800);
+    }, 1300);
     contestModalContent.classList.remove("active");
     contestModalClose.classList.remove("active");
   });
@@ -499,20 +521,5 @@
     setTimeout(function () {}, 3000);
   };
   $(".sound-wave .bar").addClass("bar2");
-
-  // Конец страницы
-  let $footerBorder = $("footer"),
-      $footerCenter = $("footer .center-block");
-
-  $(window).scroll(function() {
-    if  ($(window).scrollTop() == $(document).height() - $(window).height()) {
-      $footerBorder.css({ 'border-top':'0.75px solid rgba(255, 255, 255, 0.28)' });
-      $footerCenter.css({ 'opacity': '1', 'transition': 'opacity 0.4s' });
-    }
-    else {
-      $footerBorder.css({ 'border-top':'' });
-      $footerCenter.css({ 'opacity':'', 'transition': 'opacity 0.2s' });
-    }
-  });
 
 });
