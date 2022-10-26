@@ -1,5 +1,19 @@
-// document.addEventListener("DOMContentLoaded", function () {
+$(document).ready(function () {
   $(window).on('load', function() {
+    //Прелоадер 
+    $(".preloader")
+      .delay(1200)
+      .queue(function (next) {
+          $(this).addClass("active");
+      });
+    $(".preloader-layer")
+    .delay(1200)
+    .queue(function (next) {
+        $(this).addClass("active");
+    });
+    next();
+  });
+  
   // Плавная прокрутка по якорям
   $("a[href*='#']").on("click", function (e) {
     var anchor = $(this);

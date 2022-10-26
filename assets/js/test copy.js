@@ -5,7 +5,7 @@ const pagesElem = document.getElementById("testPages");
 //Класс, который представляет сам тест
 class Quiz
 {
-	constructor(type, questions, results, promocodes)
+	constructor(type, questions, results)
 	{
 		//Тип теста: 1 - классический тест с правильными ответами, 2 - тест без правильных ответов
 		this.type = type;
@@ -15,11 +15,6 @@ class Quiz
 
 		//Массив с возможными результатами
 		this.results = results;
-
-		//Массив с промокодами
-		this.promocodes = promocodes;
-
-		this.promocode = 0;
 
 		//Количество набранных очков
 		this.score = 0;
@@ -82,7 +77,7 @@ class Quiz
 			{
 				this.result = i;
 			}
-		};
+		}
 	}
 } 
 
@@ -134,30 +129,11 @@ class Result
 	}
 }
 
-// Класс для промокодов
-class Promocode 
-{
-	constructor(text, value)
-	{
-		this.text = text;
-		this.value = value;
-	}
-}
-
-//Класс, представляющий конкретный промокод
-class Code 
-{
-	constructor(text, value) 
-	{
-		this.text = text; 
-		this.value = value; 
-	}
-}
-
 //Массив с результатами
 const results = 
 [
 	new Result("Ваша скидка 3%, выберите магазин", 0),
+	new Result("Ваша скидка 3%, выберите магазин", 3),
 	new Result("Ваша скидка 7%, выберите магазин", 5),
 	new Result("Ваша скидка 10%, выберите магазин", 7)
 ];
@@ -237,16 +213,8 @@ const questions =
 	
 ];
 
-//Массив с промокодами
-const promocodes = 
-[
-	new Promocode('<div class="test-modal_body-item coupon ozon" id="ozon3" tabindex="0"><span>OZON_3%</span></div><div class="test-modal_body-item coupon drhead" id="drhead3" tabindex="0"><span>DrHead_3%</span></div><div class="test-modal_body-item coupon pult" id="pult3" tabindex="0"><span>PULT_3%</span></div>',0),
-	new Promocode('<div class="test-modal_body-item coupon ozon" id="ozon7" tabindex="0"><span>OZON_7%</span></div><div class="test-modal_body-item coupon drhead" id="drhead7" tabindex="0"><span>DrHead_7%</span></div><div class="test-modal_body-item coupon pult" id="pult7" tabindex="0"><span>PULT_7%</span></div>',5),
-	new Promocode('<div class="test-modal_body-item coupon ozon" id="ozon10" tabindex="0"><span>OZON_10%</span></div><div class="test-modal_body-item coupon drhead" id="drhead10" tabindex="0"><span>DrHead_10%</span></div><div class="test-modal_body-item coupon pult" id="pult10" tabindex="0"><span>PULT_10%</span></div>',7)
-];
-
 //Сам тест
-const quiz = new Quiz(1, questions, results, promocodes);
+const quiz = new Quiz(1, questions, results);
 
 Update();
 
@@ -278,14 +246,13 @@ function Update()
 		//Выводим номер текущего вопроса
 		pagesElem.innerHTML = (quiz.current + 1) + " / " + quiz.questions.length;
 
-
 		//Вызываем функцию, которая прикрепит события к новым кнопкам
 		Init();
 	}
 	else
 	{
 		//Если это конец, то выводим результат
-		buttonsElem.innerHTML = quiz.promocodes[quiz.result].text;
+		buttonsElem.innerHTML = "";
 		headElem.innerHTML = quiz.results[quiz.result].text;
 		pagesElem.innerHTML = quiz.score + " из 10";
 	}
@@ -340,7 +307,3 @@ function Click(index)
 	//Ждём секунду и обновляем тест
 	setTimeout(Update, 1000);
 }
-
-document.getElementById('ozon3').addEventListener('click', function(){
-	this.textContent = this.textContent == 'Открыть' ? 'Закрыть' : 'Открыть';
-});

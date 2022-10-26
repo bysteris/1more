@@ -14,6 +14,56 @@
 </head>
 
 <body>
+
+    <style>
+        .preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            width: 100vw;
+            background-color: #0C0D0E;
+            transition: all 1.9s cubic-bezier(0.74, 0, 0.24, 0.99);
+            z-index: 1000;
+        }
+
+        .preloader-layer {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            width: 100vw;
+            background-color: #FE3B1F;
+            transition: all 1.5s cubic-bezier(0.74, 0, 0.24, 0.99);
+            z-index: 9999;
+        }
+
+        .preloader.active {
+            top: -200%;
+        }
+
+        .preloader-layer.active {
+            top: -200%;
+        }
+
+        .preloader-wrap {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            width: 100%;
+        }
+    </style>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="preloader-layer">
+            <div class="preloader-wrap">
+                <img src="/assets/image/preloader.png" alt="preloader">
+            </div>
+        </div>
+    </div>
+    <!-- End Preloader -->
+
     <!-- Header -->
     <header>
         <div class="header-wrapper">
@@ -760,7 +810,7 @@
                 </div>
             </div>
         </div>
-        
+
         <div class="footer-static">
             <div class="center-block">
                 <span>Дизайн и разработка — <a href="#">BEZNEBES</a></span>
@@ -788,13 +838,27 @@
         <div class="burger-menu_wrapper">
             <div class="burger-menu_content">
                 <ul class="burger-menu_list">
-                    <a href="#"><li class="burger-menu_list-item">Главная</li></a>
-                    <a href="#timeline"><li class="burger-menu_list-item">Таймлайн</li></a>
-                    <a href="#banner"><li class="burger-menu_list-item">EVO</li></a>
-                    <a href="#contest"><li class="burger-menu_list-item">Конкурс</li></a>
-                    <a href="#test"><li class="burger-menu_list-item">Тест</li></a>
-                    <a href="#buy"><li class="burger-menu_list-item">Модели</li></a>
-                    <a href="#contacts"><li class="burger-menu_list-item">Контакты</li></a>
+                    <a href="#">
+                        <li class="burger-menu_list-item">Главная</li>
+                    </a>
+                    <a href="#timeline">
+                        <li class="burger-menu_list-item">Таймлайн</li>
+                    </a>
+                    <a href="#banner">
+                        <li class="burger-menu_list-item">EVO</li>
+                    </a>
+                    <a href="#contest">
+                        <li class="burger-menu_list-item">Конкурс</li>
+                    </a>
+                    <a href="#test">
+                        <li class="burger-menu_list-item">Тест</li>
+                    </a>
+                    <a href="#buy">
+                        <li class="burger-menu_list-item">Модели</li>
+                    </a>
+                    <a href="#contacts">
+                        <li class="burger-menu_list-item">Контакты</li>
+                    </a>
                 </ul>
             </div>
         </div>
@@ -891,7 +955,7 @@
                     <div class="test-modal_body-item correct"></div>
                     <div class="test-modal_body-item passive"></div>
                 </div>
-                <div class="test-modal_footer" id="pages"></div>
+                <div class="test-modal_footer" id="testPages"></div>
             </div>
             <div class="test-modal_close"></div>
         </div>
@@ -908,30 +972,6 @@
     <script src="/assets/js/script.js"></script>
     <script src="/assets/js/test.js"></script>
 
-
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/smoothscroll/1.4.10/SmoothScroll.min.js"
-        integrity="sha256-huW7yWl7tNfP7lGk46XE+Sp0nCotjzYodhVKlwaNeco=" crossorigin="anonymous"></script>
-    <script>
-        SmoothScroll({
-            animationTime: 800,
-            stepSize: 25,
-
-
-            accelerationDelta: 20,
-            accelerationMax: 2,
-
-
-            keyboardSupport: true,
-            arrowScroll: 50,
-
-
-            pulseAlgorithm: true,
-            pulseScale: 2,
-            pulseNormalize: 1,
-
-            touchpadSupport: true,
-        })
-    </script> -->
 
 </body>
 

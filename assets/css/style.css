@@ -76,7 +76,7 @@
   background: #fefefe;
   border-radius: 50px;
   -webkit-animation: sound 0ms -800ms linear infinite alternate;
-          animation: sound 0ms -800ms linear infinite alternate;
+  animation: sound 0ms -800ms linear infinite alternate;
   transition: height 0.8s;
 }
 
@@ -88,7 +88,7 @@
   background: #fefefe;
   border-radius: 50px;
   -webkit-animation: sound2 0ms -800ms linear infinite alternate;
-          animation: sound2 0ms -800ms linear infinite alternate;
+  animation: sound2 0ms -800ms linear infinite alternate;
   transition: height 0.8s;
 }
 
@@ -143,43 +143,43 @@
 .bar:nth-child(1) {
   height: 35px;
   -webkit-animation-duration: 474ms;
-          animation-duration: 474ms;
+  animation-duration: 474ms;
 }
 
 .bar:nth-child(2) {
   height: 10px;
   -webkit-animation-duration: 433ms;
-          animation-duration: 433ms;
+  animation-duration: 433ms;
 }
 
 .bar:nth-child(3) {
   height: 20px;
   -webkit-animation-duration: 407ms;
-          animation-duration: 407ms;
+  animation-duration: 407ms;
 }
 
 .bar:nth-child(4) {
   height: 5px;
   -webkit-animation-duration: 458ms;
-          animation-duration: 458ms;
+  animation-duration: 458ms;
 }
 
 .bar:nth-child(5) {
   height: 20px;
   -webkit-animation-duration: 400ms;
-          animation-duration: 400ms;
+  animation-duration: 400ms;
 }
 
 .bar:nth-child(6) {
   height: 10px;
   -webkit-animation-duration: 427ms;
-          animation-duration: 427ms;
+  animation-duration: 427ms;
 }
 
 .bar:nth-child(7) {
   height: 35px;
   -webkit-animation-duration: 441ms;
-          animation-duration: 441ms;
+  animation-duration: 441ms;
 }
 /* End @keyframes */
 
@@ -429,7 +429,7 @@ body,
   width: 100%;
   height: 120%;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 .heroItem-title {
@@ -855,7 +855,7 @@ body,
 
 .ban-img {
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 .banner-radius {
@@ -1417,7 +1417,7 @@ body,
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 .slide-container {
@@ -1470,7 +1470,7 @@ body,
   display: inline-block;
   padding-left: 10%;
   -webkit-animation: scroll 9s infinite linear;
-          animation: scroll 9s infinite linear;
+  animation: scroll 9s infinite linear;
 }
 
 /* Анимация прокрутки логотипа в контактах */
@@ -2266,6 +2266,55 @@ footer.active .right-block {
 
 .test-modal_body-item:hover {
   border: 1px solid #ffffff;
+}
+
+.test-modal_body-item.coupon {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 30%;
+  height: 60px;
+}
+
+.ozon {
+  background: url(/assets/image/coupon_ozon.png);
+}
+
+.ozon:focus {
+  background: #26bc59;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.drhead {
+  background: url(/assets/image/coupon_drhead.png);
+}
+
+.drhead:focus {
+  background: #26bc59;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.pult {
+  background: url(/assets/image/coupon_pult.png);
+}
+
+.pult:focus {
+  background: #26bc59;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#ozon3 span, #ozon7 span, #ozon10 span {
+  color: transparent;
+}
+
+#ozon3:hover span, #ozon7:hover span, #ozon10:hover span {
+  color: #ffffff;
+}
+
+#ozon3:focus span, #ozon7:focus span, #ozon10:focus span {
+  color: #ffffff;
 }
 
 .wrong,
